@@ -1,0 +1,56 @@
+[2022-11-13T12:01:57.077] [INFO] http - connect successfully
+[2022-11-13T12:01:57.082] [INFO] http - Server running on http://localhost:8080
+[2022-11-13T12:03:03.632] [INFO] http - token解析结果： {
+  _id: '6370ff50bfcb321e7d7fecbf',
+  isAuth: true,
+  nickname: 'zzz',
+  avatar: 'https://img0.baidu.com/it/u=3661751063,3479210146&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500',
+  username: '123123',
+  iat: 1668349783,
+  exp: 1668954583
+}
+[2022-11-13T12:04:02.777] [INFO] http - token解析结果： {
+  _id: '6370ff50bfcb321e7d7fecbf',
+  isAuth: true,
+  nickname: 'zzz',
+  avatar: 'https://img0.baidu.com/it/u=3661751063,3479210146&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500',
+  username: '123123',
+  iat: 1668349783,
+  exp: 1668954583
+}
+[2022-11-13T12:11:33.728] [INFO] http - token解析结果： {
+  _id: '6370ff50bfcb321e7d7fecbf',
+  isAuth: true,
+  nickname: 'zzz',
+  avatar: 'https://img0.baidu.com/it/u=3661751063,3479210146&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500',
+  username: '123123',
+  iat: 1668349783,
+  exp: 1668954583
+}
+[2022-11-13T12:11:35.772] [INFO] http - token解析结果： {
+  _id: '6370ff50bfcb321e7d7fecbf',
+  isAuth: true,
+  nickname: 'zzz',
+  avatar: 'https://img0.baidu.com/it/u=3661751063,3479210146&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500',
+  username: '123123',
+  iat: 1668349783,
+  exp: 1668954583
+}
+[2022-11-13T12:11:37.916] [INFO] http - token解析结果： {
+  _id: '6370ff50bfcb321e7d7fecbf',
+  isAuth: true,
+  nickname: 'zzz',
+  avatar: 'https://img0.baidu.com/it/u=3661751063,3479210146&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500',
+  username: '123123',
+  iat: 1668349783,
+  exp: 1668954583
+}
+[2022-11-13T12:21:13.164] [INFO] http - token解析结果： {
+  _id: '6370ff50bfcb321e7d7fecbf',
+  isAuth: true,
+  nickname: 'zzz',
+  avatar: 'https://img0.baidu.com/it/u=3661751063,3479210146&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500',
+  username: '123123',
+  iat: 1668349783,
+  exp: 1668954583
+}

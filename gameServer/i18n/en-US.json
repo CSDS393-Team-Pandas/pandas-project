@@ -1,0 +1,155 @@
+{
+    "400001": {
+      "status": 400,
+      "message": "Illegal Request"
+    },
+    "400400": {
+      "status": 400,
+      "message": "Undefined Error"
+    },
+    "400600": {
+      "status": 400,
+      "message": "Video Posting Failed"
+    },
+    "400401": {
+      "status": 401,
+      "message": "Unauthorized Request"
+    },
+    "400402": {
+      "status": 401,
+      "message": "Operators do not have permission to execute"
+    },
+    "400403": {
+      "status": 403,
+      "message": "Request shut down by server"
+    },
+    "400404": {
+      "status": 404,
+      "message": "Resource not exist"
+    },
+    "400500": {
+      "status": 500,
+      "message": "Server internal error"
+    },
+    "401001": {
+      "status": 400,
+      "message": "Illegal reuqest parameter"
+    },
+    "401003": {
+      "status": 400,
+      "message": "Data not exist"
+    },
+    "402001": {
+      "status": 400,
+      "message": "Please log in first"
+    },
+    "402002": {
+      "status": 400,
+      "message": "Log in Failed"
+    },
+    "402003": {
+      "status": 400,
+      "message": "Parameter cannot be null"
+    },
+    "402004": {
+      "status": 400,
+      "message": "Passwords entered does not match"
+    },
+    "402005": {
+      "status": 400,
+      "message": "Username must be phone number or email"
+    },
+    "402006": {
+      "status": 400,
+      "message": "Username or password is not correct"
+    },
+    "402007": {
+      "status": 400,
+      "message": "User exist already"
+    },
+    "402008": {
+      "status": 400,
+      "message": "Exceed page limit"
+    },
+    "402009": {
+      "status": 400,
+      "message": "Document uploading failed, please try again"
+    },
+    "402010": {
+      "status": 400,
+      "message": "Only png/jpg/jpeg are allowed to upload"
+    },
+    "402011": {
+      "status": 400,
+      "message": "Screen locked, please unlock"
+    },
+    "402012": {
+      "status": 400,
+      "message": "Please set password first"
+    },
+    "402013": {
+      "status": 400,
+      "message": "Password Invalid"
+    },
+    "402014": {
+      "status": 400,
+      "message": "User does not exist"
+    },
+    "402015": {
+      "status": 400,
+      "message": "Phone number format invalid"
+    },
+    "402016": {
+      "status": 400,
+      "message": "Email format invalid"
+    },
+    "402017": {
+      "status": 400,
+      "message": "Profession format invalid"
+    },
+    "402018": {
+      "status": 400,
+      "message": "Group format invalid"
+    },
+    "402019": {
+      "status": 400,
+      "message": "Address format invalid"
+    },
+    "402020": {
+      "status": 400,
+      "message": "Invalid token"
+    },
+    "402021": {
+      "status": 400,
+      "message": "Please log in again"
+    },
+    "402022": {
+      "status": 400,
+      "message": "Cannot delete your own account"
+    },
+    "402023" : {
+      "status": 400,
+      "message": "User account has been closed, unable to log in."
+      },
+      "400300" : {
+      "status": 400,
+      "message": "Image uploading failed."
+      },
+      "500001" : {
+      "status": 400,
+      "message": "Task creation failed."
+      },
+      "500002" : {
+      "status": 400,
+      "message": "Task update failed."
+      },
+      "500003" : {
+      "status": 400,
+      "message": "The task does not exist."
+      },
+      "500004" : {
+      "status": 400,
+      "message": "Task list initialization failed."
+      }
+  }
+  
