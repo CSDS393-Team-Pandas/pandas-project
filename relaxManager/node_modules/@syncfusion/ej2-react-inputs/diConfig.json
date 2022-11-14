@@ -1,0 +1,391 @@
+{
+    "name": "Inputs",
+    "description": "Textbox Components",
+    "eventInterfaces": ["ColorPickerEventArgs", "PaletteTileEventArgs", "BeforeOpenCloseEventArgs", "OpenEventArgs", "ModeSwitchEventArgs", "FocusInEventArgs", "FocusOutEventArgs", "ChangedEventArgs", "InputEventArgs", "SelectedEventArgs", "RemovingEventArgs", "ClearingEventArgs", "UploadingEventArgs", "CancelEventArgs", "PauseResumeEventArgs", "ActionCompleteEventArgs", "RenderingEventArgs", "FileListRenderingEventArgs", "ChangeEventArgs", "NumericFocusEventArgs", "NumericBlurEventArgs", "GetValueInputArgs", "MaskInputArgs",  "MaskChangeEventArgs", "MaskFocusEventArgs", "MaskBlurEventArgs","SliderTooltipEventArgs", "SliderChangeEventArgs", "SliderTickEventArgs", "SliderTickRenderedEventArgs"],
+    "keywords": {
+        "common": [
+            "ej2", "ej2-inputs", "syncfusion", "web-components", "input box", "textbox", "html5 textbox", "floating input", "floating label", "form controls", "input controls",
+            "color", "color picker", "colopicker", "picker", "palette", "color palette", "custom palette", "hsv colorpicker", "alpha colorpicker", "ej2 colorpicker", "color chooser",
+            "validator", "form", "form validator",
+            "masked textbox", "masked input", "input mask", "date mask", "mask format",
+            "numeric textbox", "percent textbox", "percentage textbox", "currency textbox", "numeric spinner", "numeric up-down", "number input",
+            "slider", "range slider", "minrange", "slider limits", "localization slider", "format slider", "slider with tooltip", "vertical slider", "mobile slider",
+            "upload", "upload-box", "input-file", "floating-label", "chunk-upload"
+        ],
+        "angular": [
+            "angular", "ng", "ej2-ng-inputs", "ng-inputs",
+            "ng-colorpicker", "ng-colorpalette",
+            "ng-mask", "angular mask", "angular masked textbox",
+            "ng-numeric", "angular numeric", "angular numeric textbox", "angular number input",
+            "angular slider", "slider widget", "material slider", "material ui slider",
+            "ng-upload", "ng-upload-box", "ng-input-file", "ng-chunk-upload", "angular-upload", "angular-upload-box", "angular-input-file", "angular-chunk-upload"
+        ],
+        "react": [
+            "react", "reactjs", "ej2-react-inputs", "react-inputs",
+            "react-colorpicker", "react-colorpalette",
+            "react-mask", "react masked textbox",
+            "react-numeric", "react numeric input", "react numeric textbox", "react number textbox",
+            "react slider", "react ui slider", "react ui components", "react ui slider components",
+            "react-upload", "react-upload-box", "react-input-file", "react-chunk-upload"
+        ],
+        "vue": [
+            "vue", "vuejs", "ej2-vue-inputs", "vue-inputs",
+            "vue-colorpicker", "vue-colorpalette",
+            "vue-mask", "vue masked textbox",
+            "vue-numeric", "vue numeric input", "vue numeric textbox", "vue number textbox",
+            "vue slider", "vue components", "vue slider component",
+            "vue-upload", "vue-upload-box", "vue-input-file", "vue-chunk-upload"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/syncfusion/ej2-ng-inputs"
+  },
+    "components": [
+        {
+            "baseClass": "TextBox",
+            "directoryName": "textbox",
+            "type": "form",
+            "preferredTag":"input",
+			"skipEventPropagation": true,
+            "twoWays": ["value"],
+            "blazorType": "native",
+            "blazorMultiline": "Multiline",
+            "blazorPlaceholder": "textbox",
+            "blazorDependency": [
+                "ej2-base"
+            ],
+            "comment": [
+                "/**",
+                " * Represents the EJ2 Angular TextBox Component.",
+                " * ```html",
+                " * <ejs-textbox [value]='value'></ejs-textbox>",
+                " * ```",
+                " */"
+            ],
+            "reactComment": [
+                "/**",
+                " * Represents the React TextBox Component",
+                " * ```html",
+                " * <TextBox value={value}></TextBox>",
+                " * ```",
+                " */"
+            ],
+            "vueComment": [
+                "/**",
+                " * Represents the Essential JS 2 VueJS TextBox Component",
+                " * ```html",
+                " * <ejs-textbox v-bind:value='value'></ejs-textbox>",
+                " * ```",
+                " */"
+            ]
+        },
+        {
+            "baseClass": "NumericTextBox",
+            "directoryName": "numerictextbox",
+            "type": "form",
+            "preferredTag":"input",
+			"skipEventPropagation": true,
+            "twoWays": ["value"],
+            "blazorType": "native",
+            "blazorPlaceholder": "numeric",
+            "blazorDependency": [
+                "ej2-base"
+            ],
+            "comment": [
+                "/**",
+                " * Represents the EJ2 Angular NumericTextBox Component.",
+                " * ```html",
+                " * <ej-numerictextbox [value]='value'></ej-numerictextbox>",
+                " * ```",
+                " */"
+            ],
+            "reactComment": [
+                "/**",
+                " * Represents the React NumericTextBox Component",
+                " * ```html",
+                " * <NumericTextBox value={value}></NumericTextBox>",
+                " * ```",
+                " */"
+            ],
+            "vueComment": [
+                "/**",
+                " * Represents the Essential JS 2 VueJS NumericTextBox Component",
+                " * ```html",
+                " * <ejs-numerictextbox v-bind:value='value'></ejs-numerictextbox>",
+                " * ```",
+                " */"
+            ],
+            "isGenericClass": true
+        },
+		{
+            "baseClass": "MaskedTextBox",
+            "directoryName": "maskedtextbox",
+            "type": "form",
+            "preferredTag":"input",
+			"skipEventPropagation": true,
+            "twoWays": ["value"],
+            "blazorType": "native",
+            "blazorPlaceholder": "mask",
+            "blazorDependency": [
+              "ej2-base"
+            ],
+            "controlAttributes": {
+                "name": "string"
+            },
+            "comment": [
+                "/**",
+                " * Represents the EJ2 Angular MaskedTextbox Component.",
+                " * ```html",
+                " * <ej-maskedtextbox [value]='value'></ej-maskedtextbox>",
+                " * ```",
+                " */"
+            ],
+            "reactComment": [
+                "/**",
+                " * Represents the React MaskedTextBox Component",
+                " * ```html",
+                " * <MaskedTextBox value={value}></MaskedTextBox>",
+                " * ```",
+                " */"
+            ],
+            "vueComment": [
+                "/**",
+                " * Represents the Essential JS 2 VueJS MaskedTextBox Component",
+                " * ```html",
+                " * <ejs-maskedtextbox v-bind:value='value'></ejs-maskedtextbox>",
+                " * ```",
+                " */"
+            ]
+        },
+        {
+            "baseClass": "Slider",
+            "directoryName": "slider",
+            "type": "form",
+            "preferredTag":"div",
+            "twoWays": ["value"],
+            "blazorType": "native",
+            "blazorDependency": [
+                "ej2-base",
+                "ej2-popups"
+            ],
+            "isGenericClass": true,
+            "controlAttributes": {
+                "name": "string"
+            },
+            "comment": [
+                "/**",
+                " * Represents the EJ2 Angular Slider Component.",
+                " * ```html",
+                " * <ejs-slider [value]='value'></ejs-slider>",
+                " * ```",
+                " */"
+            ],
+            "reactComment": [
+                "/**",
+                " * Represents the React Slider Component",
+                " * ```html",
+                " * <Slider value={value}></Slider>",
+                " * ```",
+                " */"
+            ],
+            "vueComment": [
+                "/**",
+                " * Represents the VueJS Slider Component.",
+                " * ```html",
+                " * <ejs-slider :value='value'></ejs-slider>",
+                " * ```",
+                " */"
+            ],
+            "complexDirective": [
+                {
+                    "propertyName": "ticks",
+                    "baseClass": "TicksData",
+                    "aspSelectorName": "e-slider-ticksdata"
+                },
+                {
+                    "propertyName": "tooltip",
+                    "baseClass": "TooltipData",
+                    "aspSelectorName": "e-slider-tooltipdata"
+                },
+                {
+                    "propertyName": "limits",
+                    "baseClass": "LimitData",
+                    "aspSelectorName": "e-slider-limitsdata"
+                }
+            ]
+        },
+        {
+            "baseClass": "Uploader",
+            "directoryName": "uploader",
+            "type": "form",
+            "preferredTag":"input",
+            "blazorPlaceholder": "upload",
+            "defaultTag": "<input type='file' id='ej2Upload'/>",
+            "blazorType": "native",
+            "blazorDependency": [
+                "ej2-base",
+                "ej2-popups"
+            ],
+            "comment": [
+                "/**",
+                " * Represents the EJ2 Angular Uploader Component.",
+                " * ```html",
+                " * <ejs-uploader></ejs-uploader>",
+                " * ```",
+                " */"
+            ],
+            "reactComment": [
+                "/**",
+                " * Represents the React Uploader Component",
+                " * ```html",
+                " * <UploaderComponent></UploaderComponent>",
+                " * ```",
+                " */"
+            ],
+            "vueComment": [
+                        "/**",
+                        " * Represents the Essential JS 2 VueJS Uploader Component",
+                        " * ```html",
+                        " * <ejs-uploader id='fileUpload' v-bind:multiple='true'></ejs-uploader>",
+                        " * ```",
+                        " */"
+            ],
+            "templateProperties": [
+                "template"
+            ],
+            "complexDirective": [
+                {
+                    "propertyName" : "asyncSettings",
+                    "baseClass" : "AsyncSettings",
+                    "SelectorName": "e-uploader-asyncsettings"
+                },
+                {
+                    "propertyName" : "buttons",
+                    "baseClass" : "ButtonsProps",
+                    "SelectorName": "e-uploader-buttons"
+                }
+            ],
+            "tagDirective": [
+                {
+                    "arrayDirectiveClassName": "files",
+                    "directiveClassName": "UploadedFiles",
+                    "propertyName": "files",
+                    "directoryName": "uploader",
+                    "baseClass": "FilesProp",
+                    "comment": [
+                        "/**",
+                        " * 'e-files' directive represent a file of angular uploader ",
+                        " * It must be contained in a Uploader component(`ejs-uploader`). ",
+                        " * ```html",
+                        " * <ejs-uploader id='fileupload' multiple=true> ",
+                        " *   <e-files>",
+                        " *    <e-file name='Java' size=23000 type='pdf'></e-file>",
+                        " *    <e-file name='C++' size=30000 type='.docx'></e-file>",
+                        " *   </e-files>",
+                        " * </ejs-uploader>",
+                        " * ```",
+                        " */"
+                    ],
+                    "reactComment": [
+                        "/**",
+                        " * `FilesDirective` represent a file of the react uploader. ",
+                        " * It must be contained in a Uploader component(`UploaderComponent`). ",
+                        " * ```tsx",
+                        " * <UploaderComponent multiple={true}> ",
+                        " *   <FilesDirective>",
+                        " *    <FileDirective name='Java' size=23000 type='pdf'><FileDirective>",
+                        " *    <FileDirective name='C++' size=30000 type='.docx'><FileDirective>",
+                        " *   </FilesDirective>",
+                        " * </UploaderComponent>",
+                        " * ```",
+                        " */"
+                    ],
+                    "vueComment": [
+                        "/**",
+                        " * 'files' directive represent a file of vue uploader ",
+                        " * It must be contained in a Uploader component(`ejs-uploader`). ",
+                        " * ```html",
+                        " * <ejs-uploader id='fileupload' v-bind:multiple='true'> ",
+                        " *   <e-files>",
+                        " *    <e-file name='Java' size=23000 type='pdf'></e-file>",
+                        " *    <e-file name='C++' size=30000 type='.docx'></e-file>",
+                        " *   </e-files>",
+                        " * </ejs-uploader>",
+                        " * ```",
+                        " */"
+                    ]
+                }
+            ]
+        },
+        {
+            "baseClass": "ColorPicker",
+            "directoryName": "color-picker",
+            "type": "form",
+            "selector": "[ejs-colorpicker]",
+            "preferredTag": "input",
+            "twoWays": ["value"],
+            "defaultTag": "<input type='color' id='colorpicker'/>",
+            "blazorType": "native",
+            "blazorPlaceholder": "colorpicker",
+            "comment": [
+                "/**",
+                " * Represents the EJ2 Angular ColorPicker Component.",
+                " * ```html",
+                " * <input ejs-colorpicker type='color'/>",
+                " * ```",
+                " */"
+            ],
+            "reactComment": [
+                "/**",
+                " * Represents the React ColorPicker Component",
+                " * ```html",
+                " * <ColorPickerComponent></ColorPickerComponent>",
+                " * ```",
+                " */"
+            ],
+            "vueComment": [
+                "/**",
+                " * Represents the Essential JS 2 VueJS ColorPicker Component",
+                " * ```html",
+                " * <ejs-colorpicker></ejs-colorpicker>",
+                " * ```",
+                " */"
+            ]
+        },
+        {
+            "baseClass": "Signature",
+            "directoryName": "signature",
+            "type": "form",
+            "selector": "[ejs-signature]",
+            "preferredTag": "canvas",
+            "defaultTag": "<canvas id='signature'/>",
+            "blazorType": "native",
+            "blazorPlaceholder": "signature",
+            "comment": [
+                "/**",
+                " * Represents the EJ2 Angular Signature Component.",
+                " * ```html",
+                " * <canvas ejs-signature />",
+                " * ```",
+                " */"
+            ],
+            "reactComment": [
+                "/**",
+                " * Represents the React Signature Component",
+                " * ```html",
+                " * <SignatureComponent></SignatureComponent>",
+                " * ```",
+                " */"
+            ],
+            "vueComment": [
+                "/**",
+                " * Represents the Essential JS 2 VueJS Signature Component",
+                " * ```html",
+                " * <ejs-signature></ejs-signature>",
+                " * ```",
+                " */"
+            ]
+        }
+    ]
+}

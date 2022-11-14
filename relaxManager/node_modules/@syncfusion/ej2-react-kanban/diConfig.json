@@ -1,0 +1,200 @@
+{
+    "name": "Kanban",
+    "description": "The Kanban board is an efficient way to visualize the workflow at each stage along its path to completion. The most important features available are Swim lane, filtering, and editing.",
+    "eventInterfaces": ["ActionEventArgs", "CardClickEventArgs", "ColumnRenderedEventArgs", "CardRenderedEventArgs"],
+    "keywords": {
+        "common": ["ej2", "syncfusion", "web-components", "kanban", "Kanban-board", "swimlane", "wip"],
+        "angular": ["angular", "ng", "ng-kanban", "angular-kanban", "angular-kanban-board"],
+        "react": ["react", "react-kanban", "react-kanban-board"],
+        "vue": ["vue", "vue-kanban", "vue-kanban-board"]
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/syncfusion/ej2-kanban"
+    },
+    "components": [
+        {
+            "baseClass": "Kanban",
+            "directoryName": "kanban",
+            "type": "simple",
+            "isGenericClass": true,
+            "blazorPlaceholder": "kanban",
+            "blazorType": "native",
+            "blazorDependency": [
+                "ej2-base",
+                "ej2-popups",
+                "ej2-inputs/blazor/NumericTextBox",
+                "ej2-inputs/blazor/TextBox",
+                "ej2-dropdowns/DropDownList",
+                "ej2-popups/blazor/Dialog",
+                "ej2-lists/blazor/ListView"           
+            ],
+            "defaultTag": "<kanban id='sample'></kanban>",
+            "twoWays": [],
+            "dynamicModules": [],
+            "diModuleFiles": [],
+            "comment": [
+                "/**",
+                " * `ej-kanban` represents the Angular Kanban Component.",
+                " * ```html",
+                " * <ejs-kanban></ejs-kanban>",
+                " * ```",
+                " */"
+            ],
+            "reactComment": [
+                "/**",
+                " * `KanbanComponent` represents the react Kanban.",
+                " * ```tsx",
+                " * <KanbanComponent/>",
+                " * ```",
+                " */"
+            ],
+            "vueComment": [
+                "/**",
+                " * `ej-kanban` represents the VueJS Kanban Component.",
+                " * ```vue",
+                " * <ejs-kanban></ejs-kanban>",
+                " * ```",
+                " */"
+            ],
+            "complexDirective": [
+                {
+                    "propertyName": "cardSettings",
+                    "baseClass": "CardSettings",
+                    "isPartialClass": true
+                },
+                {
+                    "propertyName": "swimlaneSettings",
+                    "baseClass": "SwimlaneSettings",
+                    "isPartialClass": true
+                },
+                {
+                    "propertyName": "dialogSettings",
+                    "baseClass": "DialogSettings",
+                    "isPartialClass": true
+                },
+				{
+                    "propertyName": "sortSettings",
+                    "baseClass": "SortSettings"
+                }
+            ],
+            "tagDirective": [
+                {
+                    "baseClass": "Columns",
+                    "propertyName": "columns",
+                    "directoryName": "kanban",
+                    "arrayDirectiveClassName": "Columns",
+                    "directiveClassName": "Column",
+                    "arrayDirectiveSelector": "ejs-kanban>e-columns",
+                    "directiveSelector": "e-columns>e-column",
+                    "aspArrayDirectiveSelector": "e-kanban-columns",
+                    "aspDirectiveSelector": "e-kanban-column",
+                    "templateProperties": ["template"],
+                    "isPartialClass": true,
+                    "comment": [
+                        "/**",
+                        " * `e-columns` directive represent a columns of the Kanban board. ",
+                        " * It must be contained in a Kanban component(`ejs-kanban`). ",
+                        " * ```html",
+                        " * <ejs-kanban>",
+                        " *   <e-columns>",
+                        " *    <e-column keyField='Open' textField='To Do'></e-column>",
+                        " *    <e-column keyField='Close' textField='Completed'></e-column>",
+                        " *   </e-columns>",
+                        " * </ejs-kanban>",
+                        " * ```",
+                        " */"
+                    ],
+                    "reactComment": [
+                        "/**",
+                        " * `ColumnsDirective` represent a columns of the react Kanban board. ",
+                        " * It must be contained in a Kanban component(`KanbanComponent`). ",
+                        " * ```tsx",
+                        " * <KanbanComponent>",
+                        " *  <ColumnsDirective>",
+                        " *   <ColumnDirective keyField='Open' textField='To Do'></ColumnDirective>",
+                        " *   <ColumnDirective keyField='Close' textField='Completed'></ColumnDirective>",
+                        " *  <ColumnsDirective>",
+                        " * </KanbanComponent>",
+                        " * ```",
+                        " */"
+                    ],
+                    "vueComment": [
+                        "/**",
+                        " * `e-columns` directive represent a columns of the VueJS Kanban board. ",
+                        " * It must be contained in a Kanban component(`ejs-kanban`). ",
+                        " * ```vue",
+                        " * <ejs-kanban>",
+                        " *   <e-columns>",
+                        " *    <e-column keyField='Open' textField='To Do'></e-column>",
+                        " *    <e-column keyField='Close' textField='Completed'></e-column>",
+                        " *   </e-columns>",
+                        " * </ejs-kanban>",
+                        " * ```",
+                        " */"
+                    ]
+                },
+                {
+                    "baseClass": "StackedHeaders",
+                    "propertyName": "stackedHeaders",
+                    "directoryName": "kanban",
+                    "arrayDirectiveClassName": "StackedHeaders",
+                    "directiveClassName": "StackedHeader",
+                    "arrayDirectiveSelector": "ejs-kanban>e-stackedHeaders",
+                    "directiveSelector": "e-stackedHeaders>e-stackedHeader",
+                    "aspArrayDirectiveSelector": "e-kanban-stackedHeaders",
+                    "aspDirectiveSelector": "e-kanban-stackedHeader",
+                    "comment": [
+                        "/**",
+                        " * `e-stackedHeaders` directive represent a stacked header of the Kanban board. ",
+                        " * It must be contained in a Kanban component(`ejs-kanban`). ",
+                        " * ```html",
+                        " * <ejs-kanban>",
+                        " *   <e-stackedHeaders>",
+                        " *    <e-stackedHeader keyField='Open' text='To Do'></e-stackedHeader>",
+                        " *    <e-stackedHeader keyField='Close' text='Completed'></e-stackedHeader>",
+                        " *   </e-stackedHeaders>",
+                        " * </ejs-kanban>",
+                        " * ```",
+                        " */"
+                    ],
+                    "reactComment": [
+                        "/**",
+                        " * `StackedHeadersDirective` represent a stacked header of the react Kanban board. ",
+                        " * It must be contained in a Kanban component(`KanbanComponent`). ",
+                        " * ```tsx",
+                        " * <KanbanComponent>",
+                        " *  <StackedHeadersDirective>",
+                        " *   <StackedHeaderDirective keyField='Open' text='To Do'></StackedHeaderDirective>",
+                        " *   <StackedHeaderDirective keyField='Close' text='Completed'></StackedHeaderDirective>",
+                        " *  <StackedHeadersDirective>",
+                        " * </KanbanComponent>",
+                        " * ```",
+                        " */"
+                    ],
+                    "vueComment": [
+                        "/**",
+                        " * `e-stackedHeaders` directive represent a stacked header of the VueJS Kanban board. ",
+                        " * It must be contained in a Kanban component(`ejs-kanban`). ",
+                        " * ```vue",
+                        " * <ejs-kanban>",
+                        " *   <e-stackedHeaders>",
+                        " *    <e-stackedHeader keyField='Open' text='To Do'></e-stackedHeader>",
+                        " *    <e-stackedHeader keyField='Close' text='Completed'></e-stackedHeader>",
+                        " *   </e-stackedHeaders>",
+                        " * </ejs-kanban>",
+                        " * ```",
+                        " */"
+                    ]
+                }
+            ],
+            "templateProperties": [
+                "tooltipTemplate",
+                "columns.template",
+                "swimlaneSettings.template",
+                "cardSettings.template",
+                "dialogSettings.template"
+            ]
+        }
+    ]
+}
