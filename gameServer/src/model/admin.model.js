@@ -46,12 +46,12 @@ AdminSchema.pre("save", async function (next) { // Encrypt and save the password
     return next()
   }
   const hash = await verifyPassword(user.password);
-  user.password = hash; //将加密后的数据复制给password
+  user.password = hash; // Make the encrypted data to password
   return next()
 })
 
-AdminSchema.methods.validatePassword = function (password, callback) { //在model上挂载密码验证函数
-  bcrypt.compare(password, this.password, (err, isMatch) => { //通过bcrypt的compare函数进行解密处理
+AdminSchema.methods.validatePassword = function (password, callback) { // 在model上挂载密码验证函数
+  bcrypt.compare(password, this.password, (err, isMatch) => { // Decrypt the password by using bcrypt compare function 
     if (err) return callback(err);
     callback(null, isMatch);
   });

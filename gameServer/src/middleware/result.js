@@ -8,7 +8,7 @@ const langs = {
  */
 module.exports = async (req, res, next) => {
   res.success = (data,status = 200) => {
-    const body = { code: '200', data, message: '操作成功', success: true };
+    const body = { code: '200', data, message: 'Successful access', success: true };
     res.body = body;
     res.status(status).json(body);
   };

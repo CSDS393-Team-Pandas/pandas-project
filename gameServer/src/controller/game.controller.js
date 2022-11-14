@@ -121,7 +121,7 @@ const deleteAllGame = (req,res) => {
                     return res.error('500005');
                 }
             })
-            res.success({msg: '删除成功'})
+            res.success({msg: 'Delete successfully'})
         })
     })
 }
