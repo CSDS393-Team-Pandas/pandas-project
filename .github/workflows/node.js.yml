@@ -30,7 +30,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: 'relaxManager/package.json'
+        cache-dependency-path: 'relaxManager/package-lock.json'
 
 
     - run: npm ci
