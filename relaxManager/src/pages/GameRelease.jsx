@@ -47,7 +47,7 @@ const GameRelease = () => {
     }
 
     const handleGameRelease = async () => {
-        if (!info.name || !info.price || !info.description) {
+        if (!info.name || !info.description) {
             message.error('form is null')
             return
         }

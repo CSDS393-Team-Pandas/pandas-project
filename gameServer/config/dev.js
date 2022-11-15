@@ -1,7 +1,7 @@
 module.exports = {
   "env": "dev",
   "port": 8080,
-  "whiteList": ["/","/api/login", "/api/register","/api/healthCheck","/api/upload",'/api/articleInit','/api/getArticleInfo','/admin/login','/admin/register'],
+  "whiteList": ["/","/api/login", "/api/register","/api/game","/api/healthCheck","/api/upload",'/api/articleInit','/api/getArticleInfo','/admin/login','/admin/register'],
   "adminWhiteList": ['/admin/login','/admin/register'],
   "baseUrl": "http://localhost:8080",
   "mongo": {

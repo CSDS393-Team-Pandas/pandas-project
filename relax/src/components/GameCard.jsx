@@ -47,7 +47,8 @@ const GameCard = ({ info }) => {
             <div className="py-[10px] px-[20px]">
                 <div className="font-bold text-[#95969a] text-xl">{info.name}</div>
                 <div className="flex justify-between items-center">
-                    <span className="text-[#e49c45] font-bold">${info.price}</span>
+
+                    {info.price == 0?<span className="text-[#e49c45] font-bold">$free</span> :<span className="text-[#e49c45] font-bold">${info.price}</span>}
                     <Tag style={{margin: 0}} color="blue">{ info.tag }</Tag>
                 </div>
                 <div className="flex h-[40px] overflow-hidden">
