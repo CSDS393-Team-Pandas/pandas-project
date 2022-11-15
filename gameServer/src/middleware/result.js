@@ -29,10 +29,10 @@ module.exports = async (req, res, next) => {
  */
 function parseError (req, res, err, status, data) {
   let lang = req.acceptsLanguages('en-US', 'zh-CN');
-  lang = (lang && typeof lang !== 'undefined') ? (lang && lang.toLowerCase()) : 'zh-cn';
+  lang = (lang && typeof lang !== 'undefined') ? (lang && lang.toLowerCase()) : 'en-US';
   lang = lang.indexOf(',') !== -1 ? lang.substr(0, 5) : lang;
   req.lang = lang;
-  const i18n = langs[lang] ? langs[lang] : langs['zh-cn'];
+  const i18n = langs[lang] ? langs[lang] : langs['en-US'];
   req.i18n = i18n;
   if (typeof err === 'string' && Number.isInteger(+err)) {
     const e = i18n[err];
