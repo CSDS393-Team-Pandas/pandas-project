@@ -34,7 +34,7 @@ const Game = () => {
             data: JSON.stringify({ ...current })
         }).then(res => {
             if (res.success) {
-                message.success('编辑成功')
+                message.success('edit successfully')
                 setData(data.map(item => {
                     if (item._id == current._id) {
                         item = { ...current }
@@ -60,19 +60,18 @@ const Game = () => {
     }
 
     const confirmDelete = (id) => {
-        request('gameComment.delete',{
+        request('comment.delete',{
             data: JSON.stringify({ id })
         }).then(res => {
             if(res.success) {
                 const newList = comments.filter(item => item._id != id);
                 setComments(newList)
-                message.success('删除成功')
+                message.success('delete successfully')
             }
         })
     }
 
     const confirmDeleteGame = (id) => {
-        console.log('delete')
         request('game.delete',{
             data: JSON.stringify({ id })
         }).then(res => {
@@ -80,7 +79,7 @@ const Game = () => {
             if(res.success) {
                 const newList = data.filter(item => item._id != id);
                 setData(newList)
-                message.success('删除成功')
+                message.success('delete successfully')
             }
         })
     }
@@ -134,7 +133,7 @@ const Game = () => {
                             okText="Yes"
                             cancelText="No"
                         >
-                            <Button type="danger">delet</Button>
+                            <Button type="danger">delete</Button>
                         </Popconfirm>
                         <Button type="primary" onClick={() => handleEdit(row)}>edit</Button>
                     </Space>
@@ -158,9 +157,9 @@ const Game = () => {
     return (
         <div className="relative m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
             <Header category="Page" title="game list" />
-            <div className="absolute overflow-hidden right-[50px] top-[60px]">
+            {/* <div className="absolute overflow-hidden right-[50px] top-[60px]">
                 <Button type="primary" >add game</Button>
-            </div>
+            </div> */}
             <Table
                 columns={columns}
                 dataSource={data}
@@ -196,7 +195,7 @@ const Game = () => {
                         <span>type</span>
                     </div>
                     <Select
-                        defaultValue="射击"
+                        defaultValue="Shooting game"
                         style={{
                             width: 120,
                         }}
@@ -204,10 +203,10 @@ const Game = () => {
                         onChange={e => handleChange(e,'tag')}
                     >
                         <Option value="io">io</Option>
-                        <Option value="射击">射击</Option>
-                        <Option value="休闲">休闲</Option>
+                        <Option value="Shooting game">Shooting game</Option>
+                        <Option value="Casual game">Casual game</Option>
                         <Option value="3D">3D</Option>
-                        <Option value="卡牌">卡牌</Option>
+                        <Option value="Cards game">Cards game</Option>
                     </Select>
                 </div>
                 <div className="flex mb-[10px]">
@@ -229,12 +228,12 @@ const Game = () => {
                                         <div className="flex justify-between">
                                             <span className="font-bold mr-[20px]">{item.content}</span>
                                             <Popconfirm
-                                                title="是否删除这个评论"
+                                                title="delte this comment?"
                                                 onConfirm={() => confirmDelete(item._id)}
-                                                okText="确定"
-                                                cancelText="取消"
+                                                okText="ok"
+                                                cancelText="cancel"
                                             >
-                                                <Button size='small' type="danger">删除</Button>
+                                                <Button size='small' type="danger">delete</Button>
                                             </Popconfirm>
                                         </div>
                                     }

@@ -17,6 +17,10 @@ export default {
         init: {
             method: "GET",
             url: "/admin/user"
+        },
+        delete: {
+            method: "DELETE",
+            url: "/admin/user"
         }
     },
     game: {
@@ -44,7 +48,7 @@ export default {
         },
         delete: {
             method: "DELETE",
-            url: "/api/comment"
+            url: "/admin/comment"
         }
     }
 }
