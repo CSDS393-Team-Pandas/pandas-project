@@ -1,4 +1,4 @@
-const { createOne,findOne,findAll,updateOne } = require('../service/user.service');
+const { createOne,findOne,findAll,updateOne,deleteOne } = require('../service/user.service');
 const { signJwt } = require("../utils/jwt");
 const { findAll: findUserRate } = require('../service/rate.service');
 const { findAll: getGameList } = require('../service/game.service');
@@ -36,7 +36,7 @@ const initUserList = (req,res) => {
     })
 }
 
-// user log in
+//user log in
 const loginHandler = async (req, res) => {
   const {
     username,
@@ -49,7 +49,7 @@ const loginHandler = async (req, res) => {
       return res.error('400500');
     }
     if (user) {
-      user.validatePassword(password, async (err, isMatch) => {
+      user.validatePassword(password, async (err, isMatch) => { //如果用户存在则验证密码
         if (err) {
             return res.error('400500');
         }
@@ -67,7 +67,7 @@ const loginHandler = async (req, res) => {
   })
 }
 
-//Receive user rating
+// Receive user rating
 const getUserRate = (req,res) => {
     const { _id: userId } = res.locals.user;
     findUserRate({userId},(err,data) => {
@@ -92,12 +92,22 @@ const getUserRate = (req,res) => {
     })
 }
 
+const deleteUserHandler = (req,res) => {
+  const { id } = req.body;
+  deleteOne({_id: id},(err,result) => {
+    if(err) {
+      res.error('400500').end();
+    } 
+    res.success(result)
+  })
+}
+
 //User profile edit
 const userEditHandler = (req,res) => {
-  const {avatar,nickname,signature,sex} = req.body;
+  const {avatar,nickname,signature,sex,gameLabel} = req.body;
   const { _id } = res.locals.user;
   updateOne({ _id },{
-    avatar,nickname,signature,sex
+    avatar,nickname,signature,sex,gameLabel
   },(err,user) => {
     if (err) {
       res.error('400500');
@@ -125,6 +135,7 @@ module.exports = {
     loginHandler,
     userEditHandler,
     initUserList,
+    deleteUserHandler,
     getUserInfoHandler,
     getUserRate
 };

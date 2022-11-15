@@ -1,11 +1,11 @@
 const GameModel = require('../model/game.model');
 
-const createOne = (input, callback) => { //创建用户
+const createOne = (input, callback) => { 
   const ins = new GameModel(input)
   ins.save(callback)
 };
 
-const findOne = (input, callback) => { //查找单个用户
+const findOne = (input, callback) => { 
     GameModel.findOne(input, callback)
 }
 

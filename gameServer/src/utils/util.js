@@ -4,9 +4,9 @@ const config = require('config');
 const moment = require('moment');
 
 /**
- * @description 生成随机长度验证码
- * @author zzz2003
- * @param {number} length 长度
+ * @description randomly generate verify code
+ * @author yxz
+ * @param {number} length 
  * @returns {number}
  */
 exports.generationCode = length => {
@@ -14,8 +14,8 @@ exports.generationCode = length => {
 };
 
 /**
- * @description 密码md5加密（添加盐值）
- * @param {*} password 密码
+ * @description 
+ * @param {*} password 
  * @returns {string}
  */
 exports.md5 = password => {
@@ -24,9 +24,9 @@ exports.md5 = password => {
 };
 
 /**
- * @description 正则验证手机号
- * @author zzz2003
- * @param {string} phone 手机号
+ * @description 正
+ * @author yxz
+ * @param {string} phone 
  */
 exports.verifyPhone = phone => {
   const regex = /^1[3-9]\d{9}$/;
@@ -34,9 +34,9 @@ exports.verifyPhone = phone => {
 };
 
 /**
- * @description 正则验证邮箱
- * @author zzz2003
- * @param {string} email 邮箱
+ * @description 
+ * @author yxz
+ * @param {string} email 
  * @returns true/false
  */
 exports.verifyMail = email => {
@@ -45,7 +45,6 @@ exports.verifyMail = email => {
 };
 
 /**
- * 校验日期格式是否符合YYYY-MM-DD格式
  * @param {*} date 日期
  */
 exports.verifyDate = date => {
@@ -54,7 +53,7 @@ exports.verifyDate = date => {
 };
 
 /**
- * @description 生产模型编码
+ * @description 
  * @returns string
  */
 exports.modelNumber = () => {

@@ -29,7 +29,7 @@ const CommentSchema = new mongoose.Schema({
         type: String,
         default: ''
     },
-    viewTimes: { //浏览次数
+    viewTimes: { 
         type: Number,
         default: 0
     },
@@ -37,7 +37,7 @@ const CommentSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
-    praise: { //点赞
+    praise: { 
         type: Number,
         default: 0
     }
