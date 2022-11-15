@@ -14,7 +14,7 @@ const updateOne = (query, input, callback) => {
 }
 
 const deleteOne = (query,callback) => {
-    CommentModel.findOneAndUpdate(query, {isDeleted: true}, callback)
+    CommentModel.deleteOne(query, callback)
 }
 
 const findAll = (query,callback) => {
