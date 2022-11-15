@@ -9,13 +9,48 @@ import reportWebVitals from './reportWebVitals';
 import LuisoProvider from './Context/LuisoProvider';
 import store from './redux/store'
 import { Provider } from 'react-redux'
+import { RouterProvider,createBrowserRouter,redirect }  from 'react-router-dom'
+import Sign from './pages/Sign';
+import { getToken } from './utils/storage';
+import UserInfo from './pages/UserInfo';
+import GamePage from './pages/GamePage';
+import GameDetail from './pages/GameDetail';
+
+const router = createBrowserRouter([{
+  path: '/',
+  element: <App/>,
+  children: [
+    {
+      path: '/',
+      element: <GamePage/>
+    },
+    {
+      path: 'sign',
+      element: <Sign/>
+    },
+    {
+      path: 'user',
+      element: <UserInfo/>,
+      loader: () => {
+        if (!getToken()) {
+          throw redirect("/sign");
+        }
+      }
+    },
+    {
+      path: 'gameDetail',
+      element: <GameDetail/>
+    }
+  ]
+}])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <LuisoProvider>
-        <App />
+        <RouterProvider router={router}>
+        </RouterProvider>
       </LuisoProvider>
     </Provider>
   </React.StrictMode>

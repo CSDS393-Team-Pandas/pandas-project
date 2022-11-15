@@ -8,21 +8,21 @@ import heroBg from '../assets/hero.png'
 import {storeUser} from '../utils/storage';
 import { message } from 'antd'
 
-// 登录页面
 const Sign = () => {
     const [loginType, setType] = useState(0);
     const [loading, setLoading] = useState(false);
+    const labelList = []
     const [info,setInfo] = useState({
         nickname: '',
         username: '',
-        password: ''
+        password: '',
+        gameLabel: ''
     })
 
     const handleChange = (e) => {
         setInfo(prev => ({...prev,[e.target.name]: e.target.value}));
     }
 
-    // 用户注册
     const handleSignUp = () => {
         if(!info.nickname || !info.username || !info.password) {
             message.error('username or password is null')
@@ -39,7 +39,6 @@ const Sign = () => {
         }).catch(e => setLoading(false))
     }
 
-    // 用户登录
     const handleSignIn = () => {
         if(!info.username || !info.password) {
             message.error('form cannot be null')

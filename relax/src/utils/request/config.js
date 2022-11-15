@@ -48,6 +48,10 @@ export default {
             method: "GET",
             url: "/api/game"
         },
+        authInit: {
+            method: "GET",
+            url: "/api/authGame"
+        },
         info: {
             method: "POST",
             url: "/api/getGameInfo"

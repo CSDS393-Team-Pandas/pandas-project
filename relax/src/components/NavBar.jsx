@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useLuisoContext } from '../Context/LuisoProvider'
-import { Button, Space, Avatar, Dropdown, Menu } from 'antd';
+import { Space, Avatar, Dropdown, Menu } from 'antd';
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react';
 import { getUserInfo } from '../redux/features/userSlice';
@@ -9,6 +9,19 @@ import { initUser } from '../redux/features/userSlice';
 import { getUser, dropUser } from '../utils/storage';
 import SearchPanel from './SearchPanel';
 import { AiOutlineUser,AiOutlineSetting, AiOutlinePoweroff,AiOutlineSearch } from 'react-icons/ai'
+
+const Button = (props) => {
+    const {children,onClick,className} = props;
+    const callback = () => {
+        return onClick || (() => {})
+    }
+    const baseClasses = () => {
+        return "h-[35px] hover:opacity-50 text-[#e49c45] leading-[33px] cursor-pointer px-[15px] text-center border-[#e49c45] border-1 rounded-[4px] " + (className || '')
+    }
+    return (
+        <div onClick={callback} className={baseClasses()} {...props}>{children}</div>
+    )
+}
 
 const MenuList = () => {
     const signOut = () => {
@@ -57,6 +70,8 @@ const NavBar = () => {
     const [open, setOpen] = useState(false)
     const userInfo = useSelector(getUserInfo);
 
+    console.log('userinfo',userInfo)
+
     const toSign = () => {
         window.location.href = "/sign"
     }
@@ -77,7 +92,7 @@ const NavBar = () => {
                 <div className="w-full leading-[33px] pl-[20px] hover:opacity-50 text-orange-500 rounded-full border-orange-500 border-1 h-[35px]">
                     search game
                 </div>
-                <AiOutlineSearch className="absolute right-[10px] top-[50%] translate-y-[-50%]" size={20} color="#fa7320"/>
+                {/* <AiOutlineSearch className="absolute right-[10px] top-[50%] translate-y-[-50%]" size={20} color="#fa7320"/> */}
             </div>
             <div className="flex h-full items-center">
                 {/* <Button icon={}>Search</Button> */}
@@ -89,7 +104,7 @@ const NavBar = () => {
                         <Button onClick={toSign} type="primary">login / register</Button>
                     </Space>}
             </div>
-            {/* 搜索 */}
+            {/* search */}
             {searchShow && <SearchPanel/>}
         </div>
     )

@@ -168,8 +168,10 @@ const UserInfo = () => {
         avatar: '',
         nickname: '',
         sex: '',
+        gameLabel: '',
         signature: ''
     })
+    const labelList =  ["io","Shooting game","Casual game","3D","Cards game"]
 
     const handleChange = (value, name) => {
         setInfo(prev => ({ ...prev, [name]: value }))
@@ -208,10 +210,10 @@ const UserInfo = () => {
         <div className='bg-[#303136]'>
             <NavBar />
             <div className="w-full text-gray-500 min-h-[100vh] py-[20px] px-[20px] md:px-[200px]">
-                <div className={`${visible ? 'h-[630px]' : 'h-[200px]'} border-1 transition-all relative mt-[50px] px-[40px] w-full overflow-y-hidden  bg-[rgba(0,0,0,0.1)] rounded-md  shadow-md`}>
+                <div className={`${visible ? 'h-[730px]' : 'h-[200px]'} border-1 transition-all relative mt-[50px] px-[40px] w-full overflow-y-hidden  bg-[rgba(0,0,0,0.1)] rounded-md  shadow-md`}>
                     <div className="flex relative mt-[20px] items-center">
                         <div className="mr-[20px] h-[150px] bg-gray-50 rounded-[5px] w-[150px] overflow-hidden shadow-md">
-                            <img className="" width="200" height="200" src={info.avatar} />
+                            <img className="h-full" src={info.avatar} />
                         </div>
                         <div>
                             <p className="font-bold text-2xl">{info.nickname}</p>
@@ -236,6 +238,16 @@ const UserInfo = () => {
                                 <Radio style={{color: 'white'}}  value={0}>unknown</Radio>
                                 <Radio style={{color: 'white'}}  value={1}>man</Radio>
                                 <Radio style={{color: 'white'}}  value={2}>women</Radio>
+                            </Radio.Group>
+                        </div>
+                        <div className="flex items-center py-[30px]">
+                            <div className="mr-[20px] min-w-[120px] text-xl text-gray-500">foucs game</div>
+                            <Radio.Group style={{color: 'white'}} onChange={e => handleChange(e.target.value, 'gameLabel')} name="radiogroup" value={info.gameLabel} defaultValue={0}>
+                                {
+                                    labelList.map((item,index) => (
+                                        <Radio style={{color: 'white'}} key={index} value={item}>{item}</Radio>
+                                    ))
+                                }
                             </Radio.Group>
                         </div>
                         <div className="flex items-center py-[30px]">
