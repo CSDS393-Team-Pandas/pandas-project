@@ -1,5 +1,4 @@
-class Config extends React.Component {
-   return(
+export default {
     user: {
         login: {
             method: "POST",
@@ -78,6 +77,4 @@ class Config extends React.Component {
             url: "/api/search"
         }
     }
-   );
 }
-export default Config;

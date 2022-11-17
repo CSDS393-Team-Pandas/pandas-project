@@ -1,5 +1,6 @@
 import { createSlice,createAsyncThunk } from '@reduxjs/toolkit'
 import request from '../../utils/request'
+import { redirect } from 'react-router-dom'
 
 const initialState = {
     info: {},
@@ -11,8 +12,7 @@ const initUserInfo = async () => {
       if (res.success)
         resolve(res.data);
     }).catch(e => {
-        console.log('errro',e)
-      reject(e)
+      redirect('/sign')
     })
   })
 }
@@ -31,7 +31,7 @@ export const userSlice = createSlice({
   },
   extraReducers: {
     [fetchUserInfo.fulfilled]: (state, action) => {
-        console.log(action.payload)
+        console.log('user',action.payload)
         state.info = action.payload
     }
   }

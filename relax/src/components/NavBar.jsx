@@ -104,7 +104,7 @@ const NavBar = () => {
                         <Button onClick={toSign} type="primary">login / register</Button>
                     </Space>}
             </div>
-            {/* search */}
+            {/* 搜索 */}
             {searchShow && <SearchPanel/>}
         </div>
     )

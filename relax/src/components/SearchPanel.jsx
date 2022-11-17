@@ -11,6 +11,7 @@ const SearchPanel = () => {
     const navigate = useNavigate();
     const [key,setKey] = useState("")
     const [result,setResult] = useState([]);
+    // 根据表单关键词去查找商品
     const handleSearch = (key) => {
         setKey(key);
         if(!key) {

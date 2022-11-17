@@ -41,7 +41,7 @@ const GameComment = ({ gameId }) => {
     const [content, setContent] = useState("")
     const initCommentList = () => {
         if (!gameId) {
-            message.info('illegal id')
+            message.info('非法id')
         }
         request('comment.init', {
             data: { gameId }
