@@ -1,5 +1,6 @@
-export default {
-    user: {
+const config = {
+   
+    user: {    
         login: {
             method: "POST",
             url: '/api/login'
@@ -78,3 +79,5 @@ export default {
         }
     }
 }
+
+export default config;
