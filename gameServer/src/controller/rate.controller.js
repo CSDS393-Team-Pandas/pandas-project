@@ -1,6 +1,6 @@
 const { createOne,findOne,findAll,deleteOne,updateOne } = require('../service/rate.service');
 
-// Create New Score
+// 新建评分
 const createRateHandler = (req,res) => {
     const { gameId,rate } = req.body,
         { _id } = res.locals.user;
@@ -29,7 +29,7 @@ const createRateHandler = (req,res) => {
     })
 }
 
-// Update score
+// 更新评分
 const updateRateHandler = (req,res) => {
     const {_id,rate} = req.body;
     updateOne({ _id },{rate},(err,data) => {
@@ -53,7 +53,7 @@ const getUserRateList = (req,res) => {
     })
 }
 
-//Initialize the game score
+// 初始化游戏评分
 const initRateList = (req,res) => {
     const { gameId } = req.body;
     findAll({gameId},(err,data) => {
@@ -64,7 +64,7 @@ const initRateList = (req,res) => {
     })
 }
 
-// Delete socre
+// 删除评分
 const deleteOneRate = (req,res) => {
     const { id } = req.body;
     deleteOne({_id: id},(err,data) => {
@@ -87,7 +87,7 @@ const deleteAllRate = (req,res) => {
                     return res.error('500005');
                 }
             })
-            res.success({msg: 'Detele successfully'})
+            res.success({msg: '删除成功'})
         })
     })
 }

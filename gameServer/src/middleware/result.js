@@ -4,11 +4,11 @@ const langs = {
   'zh-cn': require('../../i18n/zh-CN.json')
 };
 /**
- * process responsed data
+ * 处理响应数据
  */
 module.exports = async (req, res, next) => {
   res.success = (data,status = 200) => {
-    const body = { code: '200', data, message: 'Successful access', success: true };
+    const body = { code: '200', data, message: '操作成功', success: true };
     res.body = body;
     res.status(status).json(body);
   };
@@ -21,18 +21,18 @@ module.exports = async (req, res, next) => {
 };
 
 /**
- * @description Parse the errow message
+ * @description 解析错误信息
  * @param {object} ctx
- * @param {any} err error message
- * @param {number} status customized status
- * @param {object} data customized error message
+ * @param {any} err 错误信息
+ * @param {number} status 自定义状态码
+ * @param {object} data 自定义错误信息
  */
 function parseError (req, res, err, status, data) {
   let lang = req.acceptsLanguages('en-US', 'zh-CN');
-  lang = (lang && typeof lang !== 'undefined') ? (lang && lang.toLowerCase()) : 'en-US';
+  lang = (lang && typeof lang !== 'undefined') ? (lang && lang.toLowerCase()) : 'zh-cn';
   lang = lang.indexOf(',') !== -1 ? lang.substr(0, 5) : lang;
   req.lang = lang;
-  const i18n = langs[lang] ? langs[lang] : langs['en-US'];
+  const i18n = langs[lang] ? langs[lang] : langs['zh-cn'];
   req.i18n = i18n;
   if (typeof err === 'string' && Number.isInteger(+err)) {
     const e = i18n[err];
@@ -79,17 +79,17 @@ function parseError (req, res, err, status, data) {
 }
 
 /**
- * @description 
+ * @description 打印错误日志，并发送邮件和钉钉提示
  * @param {object} ctx
- * @param {object} err Error Message
+ * @param {object} err 错误信息
  */
 
 function handlerError (req, res, err) {
   const ip = req.ip;
   logger.error('Error Begin ====>');
-  logger.error('request inforamtion -- ip address：', ip, '---', req.method, req.originalUrl, '---', req.headers['user-agent'], '---- Token:>>>>>', req.headers['authorization']);
-  logger.error('get requested parametere>>>>>>:', req.query);
-  logger.error('post requested parametere>>>>>>:', req.body);
-  logger.error('Error Message', err);
+  logger.error('请求信息 -- ip地址：', ip, '---', req.method, req.originalUrl, '---', req.headers['user-agent'], '---- Token:>>>>>', req.headers['authorization']);
+  logger.error('get请求入参>>>>>>:', req.query);
+  logger.error('post请求入参>>>>>>:', req.body);
+  logger.error('错误信息', err);
   logger.error('<===== Error End');
 }

@@ -7,7 +7,7 @@ const commentController = require('../controller/comment.controller')
 const rateController = require('../controller/rate.controller')
 
 /**
- * @description user port
+ * @description 用户路由
  * */
 router.route('/register').post(userController.registerHandler);
 router.route('/login').post(userController.loginHandler);
@@ -15,13 +15,13 @@ router.route('/user')
   .get(userController.getUserInfoHandler)
   .put(userController.userEditHandler);
 /**
- * @description picture upload
+ * @description 图片上传
  * */
 router.route('/upload').post(uploadController.singleUploadMiddle(), uploadController.uploadHandler)
 router.route('/preview/:key').get(uploadController.imagePreviewHandler)
 
 /**
- * @description user socre
+ * @description 用户打分
  * */ 
 router.route('/rateInit').post(rateController.initRateList)
 router.route('/rate')
@@ -31,7 +31,7 @@ router.route('/rate')
 .delete(rateController.deleteOneRate)
 
 /**
- * @description comment posting
+ * @description 评论发布
  * */
 router.route('/commentInit').post(commentController.initCommentList);
 router.route('/comment')
@@ -40,7 +40,7 @@ router.route('/comment')
   .put(commentController.updateCommentHandler);
 
 /**
- *  @description game
+ *  @description 游戏
  * */ 
 router.route('/game').get(gameController.initGameList)
 router.route('/getGameInfo').post(gameController.getGameInfo)
@@ -48,12 +48,10 @@ router.route('/authGame').get(gameController.initLoginGameList)
 
 
 /**
- * @description 
+ * @description 用户行为
  * */
 // router.route('/behavior')
 // .get(behaviorController.getBehaviorInfo)
 // .post(behaviorController.updateBehaviorHandler)
 
 module.exports = router;
-
-

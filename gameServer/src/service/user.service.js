@@ -1,11 +1,11 @@
 const UserModel = require('../model/user.model');
 
-const createOne = (input, callback) => { 
+const createOne = (input, callback) => { //创建用户
   const ins = new UserModel(input)
   ins.save(callback)
 };
 
-const findOne = (input, callback) => { 
+const findOne = (input, callback) => { //查找单个用户
     UserModel.findOne(input, callback)
 }
 

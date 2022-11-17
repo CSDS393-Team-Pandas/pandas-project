@@ -3,9 +3,9 @@ const { signJwt } = require("../utils/jwt");
 const config = require("config")
 const verifyPassword = require('../utils/bcrypt')
 
-const registerHandler = async (req, res) => { //register port
+const registerHandler = async (req, res) => { //注册接口
   const input = req.body;
-  // check the database to see if the username is exist
+  // 先查找数据库看用户名是否已存在，避免出现用户名一样的情况
   findOne({
     username: input.username
   }, (err, user) => {
@@ -14,7 +14,7 @@ const registerHandler = async (req, res) => { //register port
     };
     if (user) {
       res.error('402007')
-    } else { //if not exist then create a new user
+    } else { //未出现用户名相同的的情况则创建用户
       createOne(input, (err, _newUser) => {
         if (err)
           return res.error('400500');
@@ -29,16 +29,16 @@ const loginHandler = async (req, res) => {
     username,
     password,
   } = req.body;
-  findOne({ username }, (err, user) => { // based on the username to check user
+  findOne({ username }, (err, user) => { //根据username查找用户
     if (err) {
       return res.error('400500');
     }
     if (user) {
-      user.validatePassword(password, async (err, isMatch) => { //if user exist then needs verification 
+      user.validatePassword(password, async (err, isMatch) => { //如果用户存在则验证密码
         if (err) {
             return res.error('400500');
         }
-        if (!isMatch) { //judge if password matches
+        if (!isMatch) { //判断密码是否匹配
             return res.error('402013');
         } else {
           const {_id,nickname,avatar,isAuth,username} = user;

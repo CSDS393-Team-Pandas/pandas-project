@@ -96,7 +96,7 @@ const deleteUserHandler = (req,res) => {
   const { id } = req.body;
   deleteOne({_id: id},(err,result) => {
     if(err) {
-      return res.error('400500');
+      res.error('400500').end();
     } 
     res.success(result)
   })

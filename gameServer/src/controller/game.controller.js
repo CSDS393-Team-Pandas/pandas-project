@@ -1,6 +1,5 @@
 const { createOne,findOne,findAll,deleteOne,updateOne } = require('../service/game.service');
 const { findOne: findUser } = require('../service/user.service')
-const { findAll: findUserRate } = require('../service/rate.service');
 
 const createGameHandler = (req,res) => {
     const { price,number,thumb,imgList,tag,name,description } = req.body,
@@ -83,46 +82,25 @@ const initCategoryGameList = (req,res) => {
 
 const initLoginGameList = (req,res) => {
     const { _id } = res.locals.user;
-    let ratedList = [];
     findUser({_id},(err,user) => {
         if(err) {
-            return res.error('400400');
+            res.error('400400').end();
         }
         const { gameLabel } = user;
-        if(!gameLabel) {
-            return res.error('400400');
-        }
-        findUserRate({},(err,data) => {
+        findAll({isDeleted: false},(err,data) => {
             if(err) {
                 return res.error('500004');
             }
-            ratedList = data.map(item => item.gameId);
-            
-        })
-        findAll({},(err,data) => {
-            if(err) {
-                return res.error('500004');
-            }
-            let unRatedList = [],unfocusList = [],focusList = [],ratedGameList = [];
-            ratedGameList = data.filter(item => {
-                if(ratedList.indexOf(String(item._id)) > -1) {
-                    return true
-                }
-                unRatedList.push(item);
-                return false
-            })
-
-            unfocusList = unRatedList.filter(item => {
+            let unfocusList = [],focusList = [];
+            unfocusList = data.filter(item => {
                 if(item.tag == gameLabel) {
                     focusList.push(item);
                     return false
                 }
                 return true
             })
-
-            ratedGameList.sort((a,b) => a.rate - b.rate).reverse();
-
-            res.success([...ratedGameList,...focusList,...unfocusList])
+            console.log('focus & unFocus',focusList,unfocusList)
+            res.success(focusList.concat(unfocusList))
         })
     })
 }

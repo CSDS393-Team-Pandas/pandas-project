@@ -8,7 +8,7 @@ const {checkAdmin} = require('../middleware')
 
 router.use(checkAdmin)
 /**
- * @description admin
+ * @description 管理员
  * */
 router.route('/register').post(adminController.registerHandler);
 router.route('/login').post(adminController.loginHandler);
@@ -17,7 +17,7 @@ router.route('/admin')
   .put(adminController.userEditHandler);
 
 /**
- * @description game
+ * @description 游戏
  * */
 router.route('/gameInit').post(gameController.initAdminGameList)
 router.route('/game')
@@ -30,7 +30,7 @@ router.route('/comment')
 .delete(commentController.deleteOneComment)
 
 /**
- * @description user
+ * @description 用户
  * */
 router.route('/user').get(userController.initUserList)
 .delete(userController.deleteUserHandler)

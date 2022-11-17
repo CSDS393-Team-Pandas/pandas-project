@@ -4,10 +4,10 @@ const IMAGE = "upload";
 const config = require('config')
 const imageUpload = multer({ dest: `${IMAGE}/` })
 
-//Verify the files from interface
+// 验证接口携带文件
 const singleUploadMiddle = () => imageUpload.single('upload');
 
-//Upload port
+// 上传接口
 const uploadHandler = async function(req,res){
     try {
         let name = '';
@@ -23,7 +23,7 @@ const uploadHandler = async function(req,res){
     }
 } 
 
-// Preview image
+// 图片预览
 const imagePreviewHandler = function(req,res){
     try {
         res.sendFile(`/${req.params.key}`, {
