@@ -43,7 +43,7 @@ const Sensitive = () => {
                 newList.push(info)
                 setList(newList)
                 setInfoShow(false);
-                message.success('sensitive-word set created')
+                message.success('敏感词集合创建成功')
             }
         })
     }
@@ -57,7 +57,7 @@ const Sensitive = () => {
                 newList[index] = info;
                 setList(newList);
                 setInfoShow(false);
-                message.success('edit successfully')
+                message.success('编辑成功')
                 setInfo({
                     name: '',
                     list: [],
@@ -70,7 +70,7 @@ const Sensitive = () => {
     const addKey = (key) => {
         const list = info.list;
         if(list.includes(key)) {
-            message.error('sensitive word exist')
+            message.error('敏感词已存在')
             return
         }
         list.push(key);
@@ -95,7 +95,7 @@ const Sensitive = () => {
     }, [])
     return (
         <div className="relative m-2 min-h-[100vh] md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
-            <Header category="Page" title="Sensitive Vocab Management" />
+            <Header category="Page" title="敏感词管理" />
             <div onClick={handleCollCreate} className="fixed hover:opacity-50 right-[20px] top-[100px] bg-blue-500 w-[50px] h-[50px] rounded-full flex items-center justify-around">
                 <AiOutlinePlus size={30} color="white" />
             </div>
@@ -112,7 +112,7 @@ const Sensitive = () => {
                             <span className="text-white">word number: {item.list.length}</span>
                         </div>
                     </div>
-                )) : <span> </span>}
+                )) : <span>暂无数据</span>}
             </div>
             <Modal
                 title="敏感词集合管理"
@@ -122,14 +122,14 @@ const Sensitive = () => {
                 onCancel={() => setInfoShow(false)}
             >
                 <div className="flex mb-[20px]">
-                    <div className="min-w-[100px]"><span className="text-red-500 mr-[10px]">*</span>set name</div>
+                    <div className="min-w-[100px]"><span className="text-red-500 mr-[10px]">*</span>集合名称</div>
                     <Input value={info.name} onChange={e => handleChange(e.target.value, 'name')} />
                 </div>
                 <div className="flex mb-[20px]">
-                    <div className="min-w-[100px] mr-[20px]"><span className="text-red-500 mr-[10px]">*</span>whether to choose or not</div>
+                    <div className="min-w-[100px] mr-[20px]"><span className="text-red-500 mr-[10px]">*</span>是否选用该敏感词集合</div>
                     <Radio.Group onChange={e => handleChange(e.target.value, 'active')} value={info.active}>
-                        <Radio value={true}>yes</Radio>
-                        <Radio value={false}>no</Radio>
+                        <Radio value={true}>是</Radio>
+                        <Radio value={false}>否</Radio>
                     </Radio.Group>
                 </div>
                 <div className="flex max-h-[400px] overflow-auto mb-[20px] items-center bg-gray-100 flex-wrap p-[10px] rounded-[10px] shadow-lg">
@@ -137,11 +137,11 @@ const Sensitive = () => {
                         <div key={index} className="mr-[10px] mb-[10px]">
                             <Tag onClose={(e) => removeKey(item)} closable color="blue">{item}</Tag>
                         </div>
-                    )) : <span>Nothing</span>}
+                    )) : <span>暂无关键词</span>}
                 </div>
                 <div className="flex">
                     <Input value={key} onChange={e => setKey(e.target.value)} />
-                    <Button type="primary" onClick={() => addKey(key)}>add sensitive word</Button>
+                    <Button type="primary" onClick={() => addKey(key)}>添加敏感词</Button>
                 </div>
             </Modal>
         </div>

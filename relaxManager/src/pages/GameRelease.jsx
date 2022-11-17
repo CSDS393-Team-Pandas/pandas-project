@@ -13,7 +13,7 @@ const GameRelease = () => {
         description: '',
         price: 0,
         number: 0,
-        tag: 'Shooting game',
+        tag: '射击',
         thumb: '',
     })
     const [imgFile, setImgFile] = useState({});
@@ -41,13 +41,13 @@ const GameRelease = () => {
             description: '',
             price: 0,
             number: 0,
-            tag: 'Shooting game',
+            tag: '射击',
             thumb: '',
         })
     }
 
     const handleGameRelease = async () => {
-        if (!info.name || !info.description) {
+        if (!info.name || !info.price || !info.description) {
             message.error('form is null')
             return
         }
@@ -80,7 +80,7 @@ const GameRelease = () => {
                     <Input showCount maxLength={20} onChange={(e) => handleChange(e.target.value, 'name')} />
                     <p className="text-xl font-bold mb-[10px]">#{info.title || 'type'}</p>
                     <Select
-                        defaultValue="Shooting game"
+                        defaultValue="射击"
                         style={{
                             width: 120,
                         }}
@@ -88,10 +88,10 @@ const GameRelease = () => {
                         onChange={e => handleChange(e,'tag')}
                     >
                         <Option value="io">io</Option>
-                        <Option value="Shooting game">Shooting game</Option>
-                        <Option value="Casual game">Casual game</Option>
+                        <Option value="射击">射击</Option>
+                        <Option value="休闲">休闲</Option>
                         <Option value="3D">3D</Option>
-                        <Option value="Cards game">Cards game</Option>
+                        <Option value="卡牌">卡牌</Option>
                     </Select>
                     {/* <p className="text-xl font-bold mb-[10px]">#{info.title || '游戏库存'}</p>
                     <InputNumber value={info.number} onChange={(v) => handleChange(v, 'number')} /> */}
@@ -106,7 +106,7 @@ const GameRelease = () => {
                     </div>
                 </div>
                 <Modal
-                    title="Add Topic"
+                    title="添加话题"
                     centered
                     visible={modalVisible}
                     onOk={() => setModalVisible(false)}

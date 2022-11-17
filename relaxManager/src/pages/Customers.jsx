@@ -138,19 +138,19 @@ const Customers = () => {
                     wrapperCol={{ flex: 1 }}
                     colon={false}
                 >
-                    <Form.Item label="name" name="name" rules={[{ required: true }]}>
+                    <Form.Item label="名称" name="name" rules={[{ required: true }]}>
                         <Input/>
                     </Form.Item>
 
-                    <Form.Item label="price" name="price" rules={[{ required: true }]}>
+                    <Form.Item label="价格" name="price" rules={[{ required: true }]}>
                         <InputNumber/>
                     </Form.Item>
 
-                    <Form.Item label="number" name="number"  rules={[{ required: true }]}>
+                    <Form.Item label="库存" name="number"  rules={[{ required: true }]}>
                         <InputNumber/>
                     </Form.Item>
 
-                    <Form.Item label="description" name="description" rules={[{ required: true }]}>
+                    <Form.Item label="描述" name="description" rules={[{ required: true }]}>
                         <Input/>
                     </Form.Item>
 

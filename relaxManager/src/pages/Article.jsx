@@ -28,7 +28,7 @@ const Article = () => {
             if(res.success) {
                 const newList = data.filter(item => item._id != id);
                 setData(newList)
-                message.success('delete successfully')
+                message.success('删除成功')
             }
         })
     }
@@ -44,7 +44,7 @@ const Article = () => {
             data: JSON.stringify({ ...current })
         }).then(res => {
             if (res.success) {
-                message.success('edit successfully')
+                message.success('编辑成功')
                 setData(data.map(item => {
                     if (item._id == current._id) {
                         item = { ...current }
@@ -60,7 +60,7 @@ const Article = () => {
 
     const columns = [
         {
-            title: 'article theme',
+            title: '文章主题',
             dataIndex: 'thumb',
             key: 'thumb',
             width: 150,
@@ -71,26 +71,26 @@ const Article = () => {
 
         },
         {
-            title: 'title',
+            title: '标题',
             width: 100,
             dataIndex: 'title',
             key: 'name',
             fixed: 'left',
         },
         {
-            title: 'praise',
+            title: '点赞量',
             dataIndex: 'praise',
             key: '1',
             width: 100
         },
         {
-            title: 'topic',
+            title: '主题',
             dataIndex: 'topic',
             key: '3',
             width: 150
         },
         {
-            title: 'content',
+            title: '详情',
             dataIndex: 'content',
             key: '4',
             width: 400,
@@ -101,7 +101,7 @@ const Article = () => {
             },
         },
         {
-            title: 'operation',
+            title: '操作',
             key: 'operation',
             fixed: 'right',
             width: 200,
@@ -109,14 +109,14 @@ const Article = () => {
                 return (
                     <Space>
                         <Popconfirm
-                            title="delete this article or not"
+                            title="是否删除这篇文章"
                             onConfirm={() => confirmDelete(row._id)}
-                            okText="confirm"
-                            cancelText="cancle"
+                            okText="确定"
+                            cancelText="取消"
                         >
-                            <Button type="danger">delete</Button>
+                            <Button type="danger">删除</Button>
                         </Popconfirm>
-                        <Button type="primary" disabled onClick={() => handleEdit(row)}>edit</Button>
+                        <Button type="primary" disabled onClick={() => handleEdit(row)}>编辑</Button>
                     </Space>
                 )
             },
@@ -138,7 +138,7 @@ const Article = () => {
 
     return (
         <div className="relative m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
-            <Header category="Page" title="article list" />
+            <Header category="Page" title="文章列表" />
             <Table
                 columns={columns}
                 dataSource={data}
