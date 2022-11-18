@@ -1,14 +1,21 @@
-import React from 'react';
-
-import { ChartsHeader, Stacked as StackedChart } from '../../components';
-
-const Stacked = () => (
-  <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
-    <ChartsHeader category="Stacked" title="Revenue Breakdown" />
-    <div className="w-full">
-      <StackedChart />
-    </div>
-  </div>
-);
-
-export default Stacked;
+module.exports = {
+  "env": "dev",
+  "port": 8080,
+  "whiteList": ["/","/api/login","/api/rateInit","/api/getGameInfo","/api/commentInit","/api/game", "/gameInfo","/api/register","/api/healthCheck","/api/upload",'/api/articleInit','/api/getArticleInfo','/admin/login','/admin/register'],
+  "adminWhiteList": ['/admin/login','/admin/register'],
+  "baseUrl": "http://localhost:8080",
+  "mongo": {
+    "url": "mongodb+srv://Jackknack:91ZJgjqf@cluster0.izrloio.mongodb.net/?retryWrites=true&w=majority",
+  },
+  "redis": {
+    "host": "124.220.160.190",
+    "port": 6379,
+    "password": "",
+    "db": 1
+  },
+  "jwt": {
+    "secret": "icubespace_test",
+    "algorithms": ["HS256"]
+  },
+  "salt": 10
+}
