@@ -1,5 +1,6 @@
 const { createOne,findOne,findAll,deleteOne,updateOne } = require('../service/game.service');
-const { findOne: findUser } = require('../service/user.service')
+const { findOne: findUser } = require('../service/user.service');
+const { findAll: findRate } = require('../service/rate.service');
 
 const createGameHandler = (req,res) => {
     const { price,number,thumb,imgList,tag,name,description } = req.body,
@@ -82,25 +83,37 @@ const initCategoryGameList = (req,res) => {
 
 const initLoginGameList = (req,res) => {
     const { _id } = res.locals.user;
-    findUser({_id},(err,user) => {
+    findUser({_id},async (err,user) => {
         if(err) {
-            res.error('400400').end();
+            return res.error('400400');
         }
         const { gameLabel } = user;
-        findAll({isDeleted: false},(err,data) => {
+        const rateMap = {};
+        let rateData = await findRate({userId: _id})
+        rateData.forEach(item => {
+            rateMap[item.gameId] = item;
+        });
+        findAll({},(err,data) => {
             if(err) {
                 return res.error('500004');
             }
-            let unfocusList = [],focusList = [];
-            unfocusList = data.filter(item => {
+            let unfocusList = [],focusList = [],unRateList = [],rateList = [];
+            data.forEach((item,index) => {
+                if(Object.keys(rateMap).includes(String(item._id))) {
+                    rateList.push({...JSON.parse(JSON.stringify(item)),rate: rateMap[item._id].rate});
+                } else {
+                    unRateList.push(item);
+                }
+            })
+            unRateList.forEach(item => {
                 if(item.tag == gameLabel) {
                     focusList.push(item);
-                    return false
+                } else {
+                    unfocusList.push(item);
                 }
-                return true
             })
-            console.log('focus & unFocus',focusList,unfocusList)
-            res.success(focusList.concat(unfocusList))
+            rateList = rateList.sort((a,b) => b.rate - a.rate);
+            res.success([...rateList,...focusList,...unfocusList])
         })
     })
 }
