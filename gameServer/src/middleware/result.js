@@ -4,11 +4,11 @@ const langs = {
   'zh-cn': require('../../i18n/zh-CN.json')
 };
 /**
- * 处理响应数据
+ * Process response data
  */
 module.exports = async (req, res, next) => {
   res.success = (data,status = 200) => {
-    const body = { code: '200', data, message: '操作成功', success: true };
+    const body = { code: '200', data, message: 'Successful operation', success: true };
     res.body = body;
     res.status(status).json(body);
   };
@@ -21,11 +21,11 @@ module.exports = async (req, res, next) => {
 };
 
 /**
- * @description 解析错误信息
+ * @description Parse error messages
  * @param {object} ctx
- * @param {any} err 错误信息
- * @param {number} status 自定义状态码
- * @param {object} data 自定义错误信息
+ * @param {any} err Error message
+ * @param {number} status customized status code
+ * @param {object} data customized error message
  */
 function parseError (req, res, err, status, data) {
   let lang = req.acceptsLanguages('en-US', 'zh-CN');
@@ -79,17 +79,17 @@ function parseError (req, res, err, status, data) {
 }
 
 /**
- * @description 打印错误日志，并发送邮件和钉钉提示
+ * @description Print error log
  * @param {object} ctx
- * @param {object} err 错误信息
+ * @param {object} err Error message
  */
 
 function handlerError (req, res, err) {
   const ip = req.ip;
   logger.error('Error Begin ====>');
-  logger.error('请求信息 -- ip地址：', ip, '---', req.method, req.originalUrl, '---', req.headers['user-agent'], '---- Token:>>>>>', req.headers['authorization']);
-  logger.error('get请求入参>>>>>>:', req.query);
-  logger.error('post请求入参>>>>>>:', req.body);
-  logger.error('错误信息', err);
+  logger.error('Information request -- ip address：', ip, '---', req.method, req.originalUrl, '---', req.headers['user-agent'], '---- Token:>>>>>', req.headers['authorization']);
+  logger.error('get request input>>>>>>:', req.query);
+  logger.error('post request input>>>>>>:', req.body);
+  logger.error('Error message', err);
   logger.error('<===== Error End');
 }

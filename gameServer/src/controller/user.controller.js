@@ -49,7 +49,7 @@ const loginHandler = async (req, res) => {
       return res.error('400500');
     }
     if (user) {
-      user.validatePassword(password, async (err, isMatch) => { //如果用户存在则验证密码
+      user.validatePassword(password, async (err, isMatch) => { //Verify password if user exists
         if (err) {
             return res.error('400500');
         }

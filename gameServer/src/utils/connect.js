@@ -3,7 +3,7 @@ const config = require('config');
 const logger = require('./logger');
 
 /**
- * @description 连接mongodb数据库
+ * @description Connect to mongodb database
  * */ 
 
 const connect = async () => {

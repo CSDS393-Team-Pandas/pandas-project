@@ -4,9 +4,9 @@ const config = require('config');
 const moment = require('moment');
 
 /**
- * @description 生成随机长度验证码
+ * @description Generate random length verification code
  * @author zzz2003
- * @param {number} length 长度
+ * @param {number} length length
  * @returns {number}
  */
 exports.generationCode = length => {
@@ -14,8 +14,8 @@ exports.generationCode = length => {
 };
 
 /**
- * @description 密码md5加密（添加盐值）
- * @param {*} password 密码
+ * @description Password md5 encryption (add salt value)
+ * @param {*} password password
  * @returns {string}
  */
 exports.md5 = password => {
@@ -24,9 +24,9 @@ exports.md5 = password => {
 };
 
 /**
- * @description 正则验证手机号
+ * @description Regular verification phone number
  * @author zzz2003
- * @param {string} phone 手机号
+ * @param {string} phone phone number
  */
 exports.verifyPhone = phone => {
   const regex = /^1[3-9]\d{9}$/;
@@ -34,9 +34,9 @@ exports.verifyPhone = phone => {
 };
 
 /**
- * @description 正则验证邮箱
+ * @description Regular verification email
  * @author zzz2003
- * @param {string} email 邮箱
+ * @param {string} email email
  * @returns true/false
  */
 exports.verifyMail = email => {
@@ -45,8 +45,8 @@ exports.verifyMail = email => {
 };
 
 /**
- * 校验日期格式是否符合YYYY-MM-DD格式
- * @param {*} date 日期
+ * Check whether the date format conforms to the YYYY-MM-DD format
+ * @param {*} date date
  */
 exports.verifyDate = date => {
   const regex = /^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/;  // eslint-disable-line
@@ -54,7 +54,7 @@ exports.verifyDate = date => {
 };
 
 /**
- * @description 生产模型编码
+ * @description Produce model number
  * @returns string
  */
 exports.modelNumber = () => {

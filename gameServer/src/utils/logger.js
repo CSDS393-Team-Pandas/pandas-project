@@ -6,11 +6,11 @@
  const path = require('path');
  log4js.configure({
    appenders: {
-     // 记录器1: 输出到控制台
+     // Logger 1: output to console
      console: {
        type: 'console'
      },
-     // 记录器2: 输出到access_http.log日志文件
+     // Logger 2: Output to access_http.log log file
      infoLog: {
        type: 'dateFile',
        filename: path.join(__dirname, '../logs/success.log'),
@@ -18,7 +18,7 @@
        alwaysIncludePattern: true,
        keepFileExt: true
      },
-     // 记录器3: 输出到aceess_error.log日志文件
+     // Logger 3: Output to the aceess_error.log log file
      errorLog: {
        type: 'dateFile',
        filename: path.join(__dirname, '../logs/error.log'),
@@ -39,12 +39,12 @@
    }
  });
  
- // 实例化普通日志logger
+ // Instantiate a normal log logger
  const loggerhttp = log4js.getLogger('http');
- // 实例化error日志logger
+ // Instantiate the error log logger
  const loggererror = log4js.getLogger('error');
  
- // 封装普通日志和error日志两种logger
+ // Encapsulates two loggers, normal log and error log
  const logger = {
    debug: function () {
      loggerhttp.debug(...arguments);
