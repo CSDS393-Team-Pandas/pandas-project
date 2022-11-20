@@ -5,7 +5,6 @@ const moment = require('moment');
 
 /**
  * @description Generate random length verification code
- * @author zzz2003
  * @param {number} length length
  * @returns {number}
  */
@@ -25,7 +24,6 @@ exports.md5 = password => {
 
 /**
  * @description Regular verification phone number
- * @author zzz2003
  * @param {string} phone phone number
  */
 exports.verifyPhone = phone => {
@@ -35,7 +33,6 @@ exports.verifyPhone = phone => {
 
 /**
  * @description Regular verification email
- * @author zzz2003
  * @param {string} email email
  * @returns true/false
  */
