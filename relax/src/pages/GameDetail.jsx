@@ -25,7 +25,7 @@ const Button = (props) => {
     )
 }
 
-// 游戏详情页
+// Game detail page
 const GameDetail = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -45,7 +45,7 @@ const GameDetail = () => {
         description: ''
     })
 
-    // 用户评分
+    // user rating
     const confirmRate = () => {
         request('rate.create',{
             data: JSON.stringify({gameId,rate})
@@ -58,7 +58,7 @@ const GameDetail = () => {
         })
     }
 
-    // 获取游戏评分
+    // gain game rating
     const getGameRate = () => {
         request('rate.init',{
             data: JSON.stringify({gameId})
@@ -67,7 +67,7 @@ const GameDetail = () => {
         })
     }
 
-    // 获取游戏详细信息
+    // get game important information
     const getGameInfo = () => {
         request('game.info',{
             data: JSON.stringify({id: gameId})
@@ -78,7 +78,7 @@ const GameDetail = () => {
         })
     }
 
-    // 页面渲染时 获取游戏详细信息
+    // Get game details when page renders
     useEffect(() => {
         getGameInfo()
         getGameRate();

@@ -11,7 +11,7 @@ const SearchPanel = () => {
     const navigate = useNavigate();
     const [key,setKey] = useState("")
     const [result,setResult] = useState([]);
-    // 根据表单关键词去查找商品
+    // Search for products based on form keywords
     const handleSearch = (key) => {
         setKey(key);
         if(!key) {
@@ -50,7 +50,7 @@ const SearchPanel = () => {
                         //                     <Tag color="blue">{item.tag}</Tag>
                         //                 </div>
                         //         </div>
-                        //         <div className="text-red-500">{item.price}元</div>
+                        //         <div className="text-red-500">{item.price}$</div>
                         //     </div>
                         // )))
                         <span></span>

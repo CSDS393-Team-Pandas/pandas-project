@@ -43,7 +43,7 @@ const Sensitive = () => {
                 newList.push(info)
                 setList(newList)
                 setInfoShow(false);
-                message.success('敏感词集合创建成功')
+                message.success('Successfully create ensitive word set')
             }
         })
     }
@@ -57,7 +57,7 @@ const Sensitive = () => {
                 newList[index] = info;
                 setList(newList);
                 setInfoShow(false);
-                message.success('编辑成功')
+                message.success('edit successfully')
                 setInfo({
                     name: '',
                     list: [],
@@ -70,7 +70,7 @@ const Sensitive = () => {
     const addKey = (key) => {
         const list = info.list;
         if(list.includes(key)) {
-            message.error('敏感词已存在')
+            message.error('sensitive word already exists')
             return
         }
         list.push(key);
@@ -95,7 +95,7 @@ const Sensitive = () => {
     }, [])
     return (
         <div className="relative m-2 min-h-[100vh] md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
-            <Header category="Page" title="敏感词管理" />
+            <Header category="Page" title="sensitive word regulation" />
             <div onClick={handleCollCreate} className="fixed hover:opacity-50 right-[20px] top-[100px] bg-blue-500 w-[50px] h-[50px] rounded-full flex items-center justify-around">
                 <AiOutlinePlus size={30} color="white" />
             </div>
@@ -115,7 +115,7 @@ const Sensitive = () => {
                 )) : <span>暂无数据</span>}
             </div>
             <Modal
-                title="敏感词集合管理"
+                title="Sensitive word collection management"
                 centered
                 open={infoShow}
                 onOk={mode == 0? createSensitive:updateSensitive}

@@ -55,7 +55,7 @@ const GameCard = ({ info }) => {
                 </div>
                 <div className="flex justify-between items-center mt-[15px]">
                     <div className="text-[#95969a]">
-                        <div>{info.authorName || '匿名用户'}</div>
+                        <div>{info.authorName || 'Anonymous user'}</div>
                         <div className="text-xs">{formatDate(info.createdAt)}</div>
                     </div>
                     <Button onClick={() => toDetail(info._id)}>View More</Button>

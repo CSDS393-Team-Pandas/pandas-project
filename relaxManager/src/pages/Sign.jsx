@@ -23,7 +23,7 @@ const Sign = () => {
 
     const handleSignUp = () => {
         if(!info.nickname || !info.username || !info.password) {
-            message.error('表单不能为空')
+            message.error('no empty form')
             return
         }
         setLoading(true)
@@ -31,7 +31,7 @@ const Sign = () => {
             data: JSON.stringify(info),
         }).then(res => {
             if(res.success) {
-                message.success('注册成功')
+                message.success('successful registration')
             }
             setLoading(false)
         }).catch(e => setLoading(false))
@@ -39,7 +39,7 @@ const Sign = () => {
 
     const handleSignIn = () => {
         if(!info.username || !info.password) {
-            message.error('表单不能为空')
+            message.error('no empty form')
             return
         }
         setLoading(true)
@@ -48,7 +48,7 @@ const Sign = () => {
         }).then(res => {
             if(res.success) {
                 if(res.success) {
-                    message.success('登录成功')
+                    message.success('log in successfully')
                 }
                 storeUser(res.data);
                 window.location.href = "/"
