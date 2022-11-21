@@ -2,7 +2,7 @@ const multer = require("multer");
 const logger = require('../utils/logger');
 const IMAGE = "upload";
 const config = require('config')
-const imageUpload = multer({ dest: `${IMAGE}/` })
+const imageUpload = multer({ dest: 'upload/' })
 
 // Verify the file carried by interface
 const singleUploadMiddle = () => imageUpload.single('upload');
