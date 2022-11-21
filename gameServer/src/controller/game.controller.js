@@ -1,6 +1,7 @@
 const { createOne,findOne,findAll,deleteOne,updateOne } = require('../service/game.service');
 const { findOne: findUser } = require('../service/user.service');
 const { findAll: findRate } = require('../service/rate.service');
+const { findAll:findGames } = require('../service/game.service');
 
 const createGameHandler = (req,res) => {
     const { price,number,thumb,imgList,tag,name,description } = req.body,
@@ -93,7 +94,7 @@ const initLoginGameList = (req,res) => {
         rateData.forEach(item => {
             rateMap[item.gameId] = item;
         });
-        findAll({},(err,data) => {
+        findGames({},(err,data) => {
             if(err) {
                 return res.error('500004');
             }
