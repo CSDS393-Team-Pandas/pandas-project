@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
        run:
-         working-directory: ./relaxManager/
+         working-directory: ./gameServer/
 
     strategy:
       matrix:
@@ -29,7 +29,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: 'relaxManager/package-lock.json'
+        cache-dependency-path: 'gameServer/package-lock.json'
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
