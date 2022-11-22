@@ -204,7 +204,7 @@ const Game = () => {
                     >
                         <Option value="rpg">rpg</Option>
                         <Option value="action">action</Option>
-                        <Option value="adventure">adventure</Option>
+                        <Option value="shooter">shooter</Option>
                         <Option value="strategy">strategy</Option>
                         <Option value="casual">casual</Option>
                     </Select>
