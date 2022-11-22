@@ -195,18 +195,18 @@ const Game = () => {
                         <span>type</span>
                     </div>
                     <Select
-                        defaultValue="rare"
+                        defaultValue="rpg"
                         style={{
                             width: 120,
                         }}
                         value={current.tag}
                         onChange={e => handleChange(e,'tag')}
                     >
-                        <Option value="epic ">epic</Option>
-                        <Option value="rare">rare</Option>
-                        <Option value="legendary">legendary</Option>
-                        <Option value="uncommon">uncommon</Option>
-                        <Option value="advertising">advertising</Option>
+                        <Option value="rpg">rpg</Option>
+                        <Option value="action">action</Option>
+                        <Option value="adventure">adventure</Option>
+                        <Option value="strategy">strategy</Option>
+                        <Option value="casual">casual</Option>
                     </Select>
                 </div>
                 <div className="flex mb-[10px]">

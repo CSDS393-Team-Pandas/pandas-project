@@ -13,7 +13,7 @@ const GameRelease = () => {
         description: '',
         price: 0,
         number: 0,
-        tag: 'rare',
+        tag: 'rpg',
         thumb: '',
     })
     const [imgFile, setImgFile] = useState({});
@@ -41,7 +41,7 @@ const GameRelease = () => {
             description: '',
             price: 0,
             number: 0,
-            tag: 'rare',
+            tag: 'rpg',
             thumb: '',
         })
     }
@@ -80,18 +80,18 @@ const GameRelease = () => {
                     <Input showCount maxLength={20} onChange={(e) => handleChange(e.target.value, 'name')} />
                     <p className="text-xl font-bold mb-[10px]">#{info.title || 'type'}</p>
                     <Select
-                        defaultValue="rare"
+                        defaultValue="rpg"
                         style={{
                             width: 120,
                         }}
                         value={info.tag}
                         onChange={e => handleChange(e,'tag')}
                     >
-                        <Option value="epic">epic</Option>
-                        <Option value="rare">rare</Option>
-                        <Option value="legendary">legendary</Option>
-                        <Option value="uncommon">uncommon</Option>
-                        <Option value="advertising">advertising</Option>
+                        <Option value="rpg">rpg</Option>
+                        <Option value="action">action</Option>
+                        <Option value="adventure">adventure</Option>
+                        <Option value="strategy">strategy</Option>
+                        <Option value="casual ">casual</Option>
                     </Select>
                     {/* <p className="text-xl font-bold mb-[10px]">#{info.title || 'game inventory'}</p>
                     <InputNumber value={info.number} onChange={(v) => handleChange(v, 'number')} /> */}
