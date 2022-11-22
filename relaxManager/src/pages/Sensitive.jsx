@@ -43,7 +43,7 @@ const Sensitive = () => {
                 newList.push(info)
                 setList(newList)
                 setInfoShow(false);
-                message.success('敏感词集合创建成功')
+                message.success('Successfully create ensitive word set')
             }
         })
     }
@@ -57,7 +57,7 @@ const Sensitive = () => {
                 newList[index] = info;
                 setList(newList);
                 setInfoShow(false);
-                message.success('编辑成功')
+                message.success('Successfully edit')
                 setInfo({
                     name: '',
                     list: [],
@@ -70,7 +70,7 @@ const Sensitive = () => {
     const addKey = (key) => {
         const list = info.list;
         if(list.includes(key)) {
-            message.error('敏感词已存在')
+            message.error('sensitive word already exists')
             return
         }
         list.push(key);
@@ -95,7 +95,7 @@ const Sensitive = () => {
     }, [])
     return (
         <div className="relative m-2 min-h-[100vh] md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
-            <Header category="Page" title="敏感词管理" />
+            <Header category="Page" title="sensitive word regulation" />
             <div onClick={handleCollCreate} className="fixed hover:opacity-50 right-[20px] top-[100px] bg-blue-500 w-[50px] h-[50px] rounded-full flex items-center justify-around">
                 <AiOutlinePlus size={30} color="white" />
             </div>
@@ -112,24 +112,24 @@ const Sensitive = () => {
                             <span className="text-white">word number: {item.list.length}</span>
                         </div>
                     </div>
-                )) : <span>暂无数据</span>}
+                )) : <span>no data</span>}
             </div>
             <Modal
-                title="敏感词集合管理"
+                title="Sensitive word collection management"
                 centered
                 open={infoShow}
                 onOk={mode == 0? createSensitive:updateSensitive}
                 onCancel={() => setInfoShow(false)}
             >
                 <div className="flex mb-[20px]">
-                    <div className="min-w-[100px]"><span className="text-red-500 mr-[10px]">*</span>集合名称</div>
+                    <div className="min-w-[100px]"><span className="text-red-500 mr-[10px]">*</span>collection name</div>
                     <Input value={info.name} onChange={e => handleChange(e.target.value, 'name')} />
                 </div>
                 <div className="flex mb-[20px]">
-                    <div className="min-w-[100px] mr-[20px]"><span className="text-red-500 mr-[10px]">*</span>是否选用该敏感词集合</div>
+                    <div className="min-w-[100px] mr-[20px]"><span className="text-red-500 mr-[10px]">*</span>whether to choose the sensitive word set</div>
                     <Radio.Group onChange={e => handleChange(e.target.value, 'active')} value={info.active}>
-                        <Radio value={true}>是</Radio>
-                        <Radio value={false}>否</Radio>
+                        <Radio value={true}>yes</Radio>
+                        <Radio value={false}>no</Radio>
                     </Radio.Group>
                 </div>
                 <div className="flex max-h-[400px] overflow-auto mb-[20px] items-center bg-gray-100 flex-wrap p-[10px] rounded-[10px] shadow-lg">
@@ -137,11 +137,11 @@ const Sensitive = () => {
                         <div key={index} className="mr-[10px] mb-[10px]">
                             <Tag onClose={(e) => removeKey(item)} closable color="blue">{item}</Tag>
                         </div>
-                    )) : <span>暂无关键词</span>}
+                    )) : <span>no critical word</span>}
                 </div>
                 <div className="flex">
                     <Input value={key} onChange={e => setKey(e.target.value)} />
-                    <Button type="primary" onClick={() => addKey(key)}>添加敏感词</Button>
+                    <Button type="primary" onClick={() => addKey(key)}>add sensitive word</Button>
                 </div>
             </Modal>
         </div>

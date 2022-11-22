@@ -171,7 +171,7 @@ const UserInfo = () => {
         gameLabel: '',
         signature: ''
     })
-    const labelList =  ["io","射击","休闲","3D","卡牌"]
+    const labelList =  ["io","shooting","casual","3D","card"]
 
     const handleChange = (value, name) => {
         setInfo(prev => ({ ...prev, [name]: value }))

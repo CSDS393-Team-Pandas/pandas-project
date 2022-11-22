@@ -13,7 +13,7 @@ const UserCard = ({ info }) => {
                     <div className="font-bold text-gray-500">{info.signature}</div>
                 </div>
             </div>
-            <Button type="primary">已关注</Button>
+            <Button type="primary">Followed</Button>
         </div>
     )
 }

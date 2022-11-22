@@ -34,7 +34,7 @@ const Product = () => {
             data: JSON.stringify({ ...current })
         }).then(res => {
             if (res.success) {
-                message.success('编辑成功')
+                message.success('successfully edit')
                 setData(data.map(item => {
                     if (item._id == current._id) {
                         item = { ...current }
@@ -66,14 +66,14 @@ const Product = () => {
             if(res.success) {
                 const newList = comments.filter(item => item._id != id);
                 setComments(newList)
-                message.success('删除成功')
+                message.success('successfully delete')
             }
         })
     }
 
     const columns = [
         {
-            title: '商品图片',
+            title: 'product picture',
             dataIndex: 'thumb',
             key: 'thumb',
             width: 150,
@@ -82,46 +82,46 @@ const Product = () => {
                 <img src={record} width="100" height="100" crossOrigin='Anonymous' alt="" />
         },
         {
-            title: '商品名称',
+            title: 'product name',
             width: 100,
             dataIndex: 'name',
             key: 'name',
             fixed: 'left',
         },
         {
-            title: '库存',
+            title: 'number',
             dataIndex: 'number',
             key: '1',
             width: 100
         },
         {
-            title: '价格',
+            title: 'price',
             dataIndex: 'price',
             key: '2',
             width: 100
         },
         {
-            title: '类型',
+            title: 'type',
             dataIndex: 'tag',
             key: '3',
             width: 150
         },
         {
-            title: '描述',
+            title: 'description',
             dataIndex: 'description',
             key: '4',
             width: 300,
         },
         {
-            title: '操作',
+            title: 'operation',
             key: 'operation',
             fixed: 'right',
             width: 200,
             render: (row) => {
                 return (
                     <Space>
-                        <Button type="danger">删除</Button>
-                        <Button type="primary" onClick={() => handleEdit(row)}>编辑</Button>
+                        <Button type="danger">delete</Button>
+                        <Button type="primary" onClick={() => handleEdit(row)}>edit</Button>
                     </Space>
                 )
             },
@@ -142,9 +142,9 @@ const Product = () => {
 
     return (
         <div className="relative m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
-            <Header category="Page" title="商品列表" />
+            <Header category="Page" title="product list" />
             <div className="absolute overflow-hidden right-[50px] top-[60px]">
-                <Button type="primary" >添加商品</Button>
+                <Button type="primary" >add product</Button>
             </div>
             <Table
                 columns={columns}
@@ -154,7 +154,7 @@ const Product = () => {
                 }}
             />
             <Modal
-                title="商品编辑"
+                title="edit product"
                 centered
                 open={modalShow}
                 onOk={confirmEdit}
@@ -163,28 +163,28 @@ const Product = () => {
                 <div className="flex mb-[10px]">
                     <div className="min-w-[120px]">
                         <span className="text-red-500">*</span>
-                        <span>商品名称</span>
+                        <span>product name</span>
                     </div>
                     <Input max={20} onChange={e => handleChange(e.target.value, 'name')} value={current.name} />
                 </div>
                 <div className="flex mb-[10px]">
                     <div className="min-w-[120px]">
                         <span className="text-red-500">*</span>
-                        <span>零售价</span>
+                        <span>retail price</span>
                     </div>
                     <InputNumber onChange={v => handleChange(v, 'price')} style={{ margin: 0 }} value={current.price} />
                 </div>
                 <div className="flex mb-[10px]">
                     <div className="min-w-[120px]">
                         <span className="text-red-500">*</span>
-                        <span>库存</span>
+                        <span>number</span>
                     </div>
                     <InputNumber onChange={v => handleChange(v, 'number')} style={{ margin: 0 }} value={current.number} />
                 </div>
                 <div className="flex mb-[10px]">
                     <div className="min-w-[120px]">
                         <span className="text-red-500">*</span>
-                        <span>类型</span>
+                        <span>type</span>
                     </div>
                     <Select
                         style={{
@@ -193,21 +193,21 @@ const Product = () => {
                         value={current.tag}
                         onChange={e => handleChange(e, 'tag')}
                     >
-                        <Option value="心理书籍">心理书籍</Option>
-                        <Option value="心理玩具">心理玩具</Option>
-                        <Option value="心理视频">心理视频</Option>
-                        <Option value="商品捐赠">商品捐赠</Option>
+                        <Option value="psychological books">psychological books</Option>
+                        <Option value="psychological toys">psychological toys</Option>
+                        <Option value="psychological videos">psychological videos</Option>
+                        <Option value="product donate">product donate</Option>
                     </Select>
                 </div>
                 <div className="flex mb-[10px]">
                     <div className="min-w-[120px]">
                         <span className="text-red-500">*</span>
-                        <span>描述</span>
+                        <span>description</span>
                     </div>
                     <TextArea onChange={e => handleChange(e.target.value, 'description')} value={current.description} />
                 </div>
                 <div className="rounded-[10px] p-[10px] bg-gray-100 max-h-[350px] overflow-auto">
-                    <div className="font-bold">商品评价</div>
+                    <div className="font-bold">product comment</div>
                     {comments.length > 0 ?
                         comments.map((item, index) => (
                             <div key={index}>
@@ -218,12 +218,12 @@ const Product = () => {
                                         <div className="flex justify-between">
                                             <span className="font-bold mr-[20px]">{item.content}</span>
                                             <Popconfirm
-                                                title="是否删除这个评论"
+                                                title="whether to delete thecomment"
                                                 onConfirm={() => confirmDelete(item._id)}
-                                                okText="确定"
-                                                cancelText="取消"
+                                                okText="confirm"
+                                                cancelText="cancel"
                                             >
-                                                <Button size='small' type="danger">删除</Button>
+                                                <Button size='small' type="danger">delete</Button>
                                             </Popconfirm>
                                         </div>
                                     }
@@ -234,7 +234,7 @@ const Product = () => {
                                 </Comment>
                             </div>
                         ))
-                        : <span className="text-gray-500 font-xs">暂无评价</span>}
+                        : <span className="text-gray-500 font-xs">no comment</span>}
                 </div>
             </Modal>
         </div>

@@ -13,7 +13,7 @@ const GameRelease = () => {
         description: '',
         price: 0,
         number: 0,
-        tag: '射击',
+        tag: 'shooting',
         thumb: '',
     })
     const [imgFile, setImgFile] = useState({});
@@ -41,7 +41,7 @@ const GameRelease = () => {
             description: '',
             price: 0,
             number: 0,
-            tag: '射击',
+            tag: 'shooting',
             thumb: '',
         })
     }
@@ -80,7 +80,7 @@ const GameRelease = () => {
                     <Input showCount maxLength={20} onChange={(e) => handleChange(e.target.value, 'name')} />
                     <p className="text-xl font-bold mb-[10px]">#{info.title || 'type'}</p>
                     <Select
-                        defaultValue="射击"
+                        defaultValue="shooting"
                         style={{
                             width: 120,
                         }}
@@ -88,12 +88,12 @@ const GameRelease = () => {
                         onChange={e => handleChange(e,'tag')}
                     >
                         <Option value="io">io</Option>
-                        <Option value="射击">射击</Option>
-                        <Option value="休闲">休闲</Option>
+                        <Option value="shooting">shooting</Option>
+                        <Option value="casual">casual</Option>
                         <Option value="3D">3D</Option>
-                        <Option value="卡牌">卡牌</Option>
+                        <Option value="card">card</Option>
                     </Select>
-                    {/* <p className="text-xl font-bold mb-[10px]">#{info.title || '游戏库存'}</p>
+                    {/* <p className="text-xl font-bold mb-[10px]">#{info.title || 'game inventory'}</p>
                     <InputNumber value={info.number} onChange={(v) => handleChange(v, 'number')} /> */}
                     <p className="text-xl font-bold mb-[10px]">#{info.title || 'price'}</p>
                     <InputNumber value={info.price} addonBefore="+" addonAfter="¥" defaultValue={0} onChange={(v) => handleChange(v, 'price')} />
@@ -106,7 +106,7 @@ const GameRelease = () => {
                     </div>
                 </div>
                 <Modal
-                    title="添加话题"
+                    title="add topic"
                     centered
                     visible={modalVisible}
                     onOk={() => setModalVisible(false)}

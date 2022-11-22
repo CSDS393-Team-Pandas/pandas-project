@@ -34,7 +34,7 @@ const Game = () => {
             data: JSON.stringify({ ...current })
         }).then(res => {
             if (res.success) {
-                message.success('编辑成功')
+                message.success('Successfully edit')
                 setData(data.map(item => {
                     if (item._id == current._id) {
                         item = { ...current }
@@ -195,7 +195,7 @@ const Game = () => {
                         <span>type</span>
                     </div>
                     <Select
-                        defaultValue="射击"
+                        defaultValue="shooting"
                         style={{
                             width: 120,
                         }}
@@ -203,10 +203,10 @@ const Game = () => {
                         onChange={e => handleChange(e,'tag')}
                     >
                         <Option value="io">io</Option>
-                        <Option value="射击">射击</Option>
-                        <Option value="休闲">休闲</Option>
+                        <Option value="shooting">shooting</Option>
+                        <Option value="casual">casual</Option>
                         <Option value="3D">3D</Option>
-                        <Option value="卡牌">卡牌</Option>
+                        <Option value="card">card</Option>
                     </Select>
                 </div>
                 <div className="flex mb-[10px]">

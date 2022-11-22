@@ -42,7 +42,7 @@ export const BehaviorSlice = createSlice({
     },
     addBehavior: (state,action) => { 
         const { type,id } = action.payload;
-        if(type == 0) { //编辑用户关注
+        if(type == 0) { //Edit User Follow
             state.focusUserList.push(id);
         } else if(type == 1) {
             state.focusArticleList.push(id);
@@ -50,7 +50,7 @@ export const BehaviorSlice = createSlice({
     },
     removeBehavior: (state,action) => { 
         const { type,id } = action.payload;
-        if(type == 0) { //编辑用户关注
+        if(type == 0) { //Edit User Follow
             state.focusUserList = state.focusUserList.filter(item => item !== id);
         } else if(type == 1) {
             state.focusArticleList = state.focusArticleList.filter(item => item !== id);

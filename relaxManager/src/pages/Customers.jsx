@@ -112,7 +112,7 @@ const Customers = () => {
         <div className="relative m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
             <Header category="Page" title="user list" />
             {/* <div className="absolute overflow-hidden right-[50px] top-[60px]">
-                <Button type="primary" >添加用户</Button>
+                <Button type="primary" >add user</Button>
             </div> */}
             <Table
                 columns={columns}
@@ -122,7 +122,7 @@ const Customers = () => {
                 }}
             />
             <Modal
-                title="用户编辑"
+                title="user edit"
                 centered
                 visible={modalShow}
                 onOk={() => setModalShow(false)}
@@ -138,19 +138,19 @@ const Customers = () => {
                     wrapperCol={{ flex: 1 }}
                     colon={false}
                 >
-                    <Form.Item label="名称" name="name" rules={[{ required: true }]}>
+                    <Form.Item label="name" name="name" rules={[{ required: true }]}>
                         <Input/>
                     </Form.Item>
 
-                    <Form.Item label="价格" name="price" rules={[{ required: true }]}>
+                    <Form.Item label="price" name="price" rules={[{ required: true }]}>
                         <InputNumber/>
                     </Form.Item>
 
-                    <Form.Item label="库存" name="number"  rules={[{ required: true }]}>
+                    <Form.Item label="number" name="number"  rules={[{ required: true }]}>
                         <InputNumber/>
                     </Form.Item>
 
-                    <Form.Item label="描述" name="description" rules={[{ required: true }]}>
+                    <Form.Item label="description" name="description" rules={[{ required: true }]}>
                         <Input/>
                     </Form.Item>
 
