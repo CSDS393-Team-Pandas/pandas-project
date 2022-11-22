@@ -46,7 +46,7 @@ const Chat = () => {
             </div>
           </div>
         ))} */}
-        <span>暂无消息</span>
+        <span>no information</span>
         <div className="mt-5">
           <Button
             color="white"
