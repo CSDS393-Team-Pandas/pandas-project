@@ -17,7 +17,7 @@ const getApiConfig = function(str) {
 
 const request = async function(url,config = {}) {
     const instance = axios.create({
-        baseURL:process.env.SERVER_URL || "http://3.21.128.138:8080",
+        baseURL:process.env.SERVER_URL || "http://3.21.164.214:8080",
         timeout: 10000
     })
 
