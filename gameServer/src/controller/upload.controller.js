@@ -16,7 +16,7 @@ const uploadHandler = async function(req,res){
         } else {
             name = req.file.filename
         }
-        url = `${config.get('baseUrl')}/api/preview/${name}` || "http://3.21.164.214:3000/api/preview/${name}`"
+        url = `${config.get('baseUrl')}/api/preview/${name}` 
         res.success({url})
     } catch(e) {
         res.error('400300')
