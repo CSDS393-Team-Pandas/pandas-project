@@ -101,7 +101,7 @@ const GameDetail = () => {
                         </div> 
                         <div className="flex items-center">
                             <Rate disabled allowHalf value={score} />
-                            <span className="ml-[10px]">{rateNumber} men rated</span>
+                            <span className="ml-[10px]">{rateNumber} rated</span>
                         </div>
                         <div className="mt-[30px]">
                             {
