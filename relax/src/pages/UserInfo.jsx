@@ -226,14 +226,14 @@ const UserInfo = () => {
                     {visible && (<div className="mt-[20px] text-gray-500 pl-[150px] w-full items-center">
                         <div className="flex items-center py-[30px]">
                             <div className="mr-[20px] min-w-[120px] text-xl text-gray-500">Avatar</div>
-                            <input className={inputClass} onChange={e => handleChange(e.target.value, 'avatar')} value={info.avatar} />
+                            // <input className={inputClass} onChange={e => handleChange(e.target.value, 'avatar')} value={info.avatar} />
                         </div>
                         <div className="flex items-center py-[30px]">
                             <div className="mr-[20px] min-w-[120px] text-xl text-gray-500">Nickname</div>
                             <input className={inputClass} onChange={e => handleChange(e.target.value, 'nickname')} value={info.nickname} />
                         </div>
                         <div className="flex items-center py-[30px]">
-                            <div className="mr-[20px] min-w-[120px] text-xl text-gray-500">Sex</div>
+                            <div className="mr-[20px] min-w-[120px] text-xl text-gray-500">Gender</div>
                             <Radio.Group style={{color: 'white'}} onChange={e => handleChange(e.target.value, 'sex')} name="radiogroup" value={info.sex} defaultValue={0}>
                                 <Radio style={{color: 'white'}}  value={0}>unknown</Radio>
                                 <Radio style={{color: 'white'}}  value={1}>man</Radio>
@@ -241,7 +241,7 @@ const UserInfo = () => {
                             </Radio.Group>
                         </div>
                         <div className="flex items-center py-[30px]">
-                            <div className="mr-[20px] min-w-[120px] text-xl text-gray-500">foucs game</div>
+                            <div className="mr-[20px] min-w-[120px] text-xl text-gray-500">Game Preference</div>
                             <Radio.Group style={{color: 'white'}} onChange={e => handleChange(e.target.value, 'gameLabel')} name="radiogroup" value={info.gameLabel} defaultValue={0}>
                                 {
                                     labelList.map((item,index) => (
