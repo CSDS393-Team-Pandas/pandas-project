@@ -95,7 +95,7 @@ const GameDetail = () => {
                         <div className="mb-[15px]"> 
                             <Tag color="red">game category {info.tag}</Tag>
                         </div>
-                        <div><span className="font-bold text-md">detail: </span>{info.description}</div>
+                        <div><span className="font-bold text-md"></span>{info.description}</div>
                         <div className="my-[10px] text-xl font-bold text-red-500"> 
                             $ {info.price}
                         </div> 
