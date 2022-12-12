@@ -16,7 +16,7 @@ const Comment = () => {
         request('comment.user').then(res => {
             setLoading(false)
             if (res.success)
-                setComment(res.data || [])o
+                setComment(res.data || [])
                 
         }).catch(e => setLoading(false))
     }
