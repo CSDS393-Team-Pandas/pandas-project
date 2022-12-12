@@ -95,7 +95,7 @@ const GameDetail = () => {
                         <div className="mb-[15px]"> 
                             <Tag color="red">game category {info.tag}</Tag>
                         </div>
-                        <div><span className="font-bold text-md">deltail: </span>{info.description}</div>
+                        <div><span className="font-bold text-md">detail: </span>{info.description}</div>
                         <div className="my-[10px] text-xl font-bold text-red-500"> 
                             $ {info.price}
                         </div> 
@@ -106,7 +106,7 @@ const GameDetail = () => {
                         <div className="mt-[30px]">
                             {
                                 rateCent == -1? <Button onClick={() => setVisible(true)} type="primary">rate now</Button> :
-                                <Button onClick={() => setVisible(true)} type="primary">you have rated {rateCent} cent</Button> 
+                                <Button onClick={() => setVisible(true)} type="primary">you have rated {rateCent} stars</Button> 
                                 
                             }
                         </div>
