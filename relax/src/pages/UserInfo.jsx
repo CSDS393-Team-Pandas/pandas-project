@@ -16,7 +16,8 @@ const Comment = () => {
         request('comment.user').then(res => {
             setLoading(false)
             if (res.success)
-                setComment(res.data || [])
+                setComment(res.data || [])o
+                
         }).catch(e => setLoading(false))
     }
     useEffect(() => {
@@ -237,7 +238,7 @@ const UserInfo = () => {
                             <Radio.Group style={{color: 'white'}} onChange={e => handleChange(e.target.value, 'sex')} name="radiogroup" value={info.sex} defaultValue={0}>
                                 <Radio style={{color: 'white'}}  value={0}>unknown</Radio>
                                 <Radio style={{color: 'white'}}  value={1}>man</Radio>
-                                <Radio style={{color: 'white'}}  value={2}>women</Radio>
+                                <Radio style={{color: 'white'}}  value={2}>woman</Radio>
                             </Radio.Group>
                         </div>
                         <div className="flex items-center py-[30px]">
